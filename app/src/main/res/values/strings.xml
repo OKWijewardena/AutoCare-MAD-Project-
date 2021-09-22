@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MAD Auto Care</string>
+    <string name="navigation_draw_open">open navigation drawer</string>
+    <string name="navigation_draw_close">close navigation drawer</string>
+    <string name="addcode">Item Code</string>
+    <string name="addname">Item Name</string>
+    <string name="addprice">Item Price</string>
+    <string name="addquantity">Item Quantity</string>
+    <string name="addimage">Item Image</string>
+    <string name="submit">Submit</string>
+    <string name="AddItems">Add Items</string>
+    <string name="AddItemsDS">Add items to company stores..</string>
+    <string name="UpdateQuantity">Update Quantity</string>
+    <string name="UpdateQuantityDS">Update items quantity company have..</string>
+    <string name="Stores">Stores</string>
+    <string name="StoresDS">Display what you have in your stores..</string>
+    <string name="DeleteItems">Delete Items</string>
+    <string name="DeleteItemsDs">Delete item what your company have..</string>
+    <string name="Sales">Sales</string>
+    <string name="SalesDS">Sales for this month...</string>
+    <string name="Settings">Settings</string>
+    <string name="SettingsDS">You can mange your profile..</string>
+    <string name="delete">Delete</string>
+    <string name="id">Supplier Id</string>
+    <string name="image">Supplier Image</string>
+    <string name="name">Supplier Name</string>
+    <string name="email">Supplier Email</string>
+    <string name="number">Phone Number</string>
+    <string name="order">Orders</string>
+    <string name="orderDS">You have order who ordered by admin..</string>
+    <string name="complete">Completes</string>
+    <string name="completeDS">You have complete orders..</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+</resources>
+

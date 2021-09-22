@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="103dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/addcode6"
+        android:layout_alignStart="@+id/addcode6"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/submit_button_style"
+        android:text="@string/delete"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="169dp"
+        android:text="@string/DeleteItems"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView33"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/DeleteItemsDs"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/addcode6"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView34"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="71dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addcode"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+</RelativeLayout>

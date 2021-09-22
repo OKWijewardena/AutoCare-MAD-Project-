@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
+
+    <EditText
+        android:id="@+id/addcode"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView7"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="71dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addcode"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="217dp"
+        android:text="@string/AddItems"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/AddItemsDS"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/addquantity"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addprice"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addquantity"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/addimage"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/addquantity"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addimage"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addclick"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignTop="@+id/addimage"
+        android:layout_alignEnd="@+id/addimage"
+        android:layout_alignBottom="@+id/addimage"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/click_button_style"
+        android:text="Click"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addsubmit"
+        android:layout_width="139dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/addimage"
+        android:layout_alignStart="@+id/addimage"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/submit_button_style"
+        android:text="@string/submit"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/addprice"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addprice"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/addname"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addcode"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="71dp"
+        android:background="@drawable/inputs"
+        android:hint="@string/addname"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+</RelativeLayout>
