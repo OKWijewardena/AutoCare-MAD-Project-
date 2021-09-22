@@ -21,7 +21,7 @@ public class Stores extends AppCompatActivity {
         setContentView(R.layout.stores_page);
 
         dbHandler = new DbHandler(context);
-        listView = findViewById(R.id.ListView);
+        listView = findViewById(R.id.getList);
         context = this;
 
         ge = new ArrayList<>();

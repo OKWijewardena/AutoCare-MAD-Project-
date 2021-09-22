@@ -94,9 +94,9 @@
         android:textColor="@color/white" />
 
     <ListView
-        android:id="@+id/ListView"
-        android:layout_width="205dp"
-        android:layout_height="388dp"
+        android:id="@+id/getList"
+        android:layout_width="365dp"
+        android:layout_height="499dp"
         android:layout_below="@+id/view1"
         android:layout_alignStart="@+id/view1"
         android:layout_alignEnd="@+id/view1"
