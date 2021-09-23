@@ -5,16 +5,53 @@
     android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
 
     <View
-        android:id="@+id/view19"
-        android:layout_width="80dp"
+        android:id="@+id/view2"
+        android:layout_width="365dp"
         android:layout_height="50dp"
         android:layout_below="@+id/textView36"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="215dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/table_style" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="94dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@+id/view2"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/textView18"
+        android:text="Quantity"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="81dp"
+        android:layout_height="21dp"
+        android:layout_alignTop="@+id/view2"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/textView19"
+        android:text="Name"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="72dp"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/view2"
+        android:layout_alignTop="@+id/view2"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:text="Code"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/textView35"
@@ -42,594 +79,14 @@
         android:textColor="@color/white"
         android:textSize="15sp" />
 
-    <View
-        android:id="@+id/view17"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/textView36"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="308dp"
-        android:background="@drawable/table_style" />
-
-    <View
-        android:id="@+id/view18"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/textView36"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="213dp"
-        android:background="@drawable/table_style" />
-
-    <View
-        android:id="@+id/view12"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view11"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView50"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view12"
-        android:layout_alignBottom="@+id/view12"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView49"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view12"
-        android:layout_alignBottom="@+id/view12"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView52"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view12"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view12"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView51"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view12"
-        android:layout_alignBottom="@+id/view12"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view13"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view12"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView54"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view13"
-        android:layout_alignBottom="@+id/view13"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view13"
-        android:layout_alignBottom="@+id/view13"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view13"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view13"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView55"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view13"
-        android:layout_alignBottom="@+id/view13"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view14"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view13"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView58"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view14"
-        android:layout_alignBottom="@+id/view14"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView57"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view14"
-        android:layout_alignBottom="@+id/view14"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="12dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView60"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view14"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view14"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView59"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view14"
-        android:layout_alignBottom="@+id/view14"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="9dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view15"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view14"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="13dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView62"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view15"
-        android:layout_alignBottom="@+id/view15"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="14dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView61"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view15"
-        android:layout_alignBottom="@+id/view15"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="14dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView64"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view15"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view15"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="17dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView63"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view15"
-        android:layout_alignBottom="@+id/view15"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="14dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view16"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view15"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="25dp"
+    <ListView
+        android:layout_width="367dp"
+        android:layout_height="408dp"
+        android:layout_below="@+id/view2"
+        android:layout_alignStart="@+id/view2"
+        android:layout_alignEnd="@+id/view2"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView66"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view16"
-        android:layout_alignBottom="@+id/view16"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView65"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view16"
-        android:layout_alignBottom="@+id/view16"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="12dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView68"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view16"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view16"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView67"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view16"
-        android:layout_alignBottom="@+id/view16"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view11"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/view"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView46"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view11"
-        android:layout_alignBottom="@+id/view11"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView45"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view11"
-        android:layout_alignBottom="@+id/view11"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView48"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view11"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view11"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView47"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view11"
-        android:layout_alignBottom="@+id/view11"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view20"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/textView36"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="309dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="22dp"
-        android:background="@drawable/table_style" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="370dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/textView36"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/table_style" />
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@+id/view"
-        android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView42"
-        android:text="No of Sales"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view"
-        android:layout_alignTop="@+id/view"
-        android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:text="Item Code"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView42"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignTop="@+id/view"
-        android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/textView41"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView44"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/view"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toEndOf="@+id/textView43"
-        android:text="Income"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="60dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/view17"
-        android:layout_alignTop="@+id/view17"
-        android:layout_alignEnd="@+id/view17"
-        android:layout_alignBottom="@+id/view17"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="11dp"
-        android:text="Item Code"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="61dp"
-        android:layout_height="22dp"
-        android:layout_alignStart="@+id/view18"
-        android:layout_alignTop="@+id/view18"
-        android:layout_alignEnd="@+id/view18"
-        android:layout_alignBottom="@+id/view18"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="12dp"
-        android:text="Item Name"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="72dp"
-        android:layout_height="24dp"
-        android:layout_alignStart="@+id/view19"
-        android:layout_alignTop="@+id/view19"
-        android:layout_alignEnd="@+id/view19"
-        android:layout_alignBottom="@+id/view19"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="11dp"
-        android:text="No of Sales"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignStart="@+id/view20"
-        android:layout_alignTop="@+id/view20"
-        android:layout_alignEnd="@+id/view20"
-        android:layout_alignBottom="@+id/view20"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="14dp"
-        android:text="Income"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:layout_marginEnd="0dp" />
 
 </RelativeLayout>
