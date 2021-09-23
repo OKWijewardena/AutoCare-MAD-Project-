@@ -5,21 +5,19 @@
     android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode9"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="140dp"
+        android:id="@+id/UpdateButton"
+        android:layout_width="153dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/UpdateQuntity"
+        android:layout_alignStart="@+id/UpdateQuntity"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="140dp"
         android:background="@drawable/submit_button_style"
-        android:text="@string/submit"
+        android:text="Update"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/addcode8"
+        android:id="@+id/UpdateName"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
@@ -29,7 +27,7 @@
         android:layout_marginTop="62dp"
         android:layout_marginEnd="71dp"
         android:background="@drawable/inputs"
-        android:hint="@string/addcode"
+        android:hint="Item Name"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColorHint="@color/white">
@@ -37,10 +35,10 @@
     </EditText>
 
     <EditText
-        android:id="@+id/addcode9"
+        android:id="@+id/UpdateQuntity"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode8"
+        android:layout_below="@+id/UpdatePrice"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="73dp"
@@ -48,6 +46,24 @@
         android:layout_marginEnd="71dp"
         android:background="@drawable/inputs"
         android:hint="@string/addquantity"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="@color/white">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/UpdatePrice"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UpdateName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="71dp"
+        android:background="@drawable/inputs"
+        android:hint="Item Price"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColorHint="@color/white">

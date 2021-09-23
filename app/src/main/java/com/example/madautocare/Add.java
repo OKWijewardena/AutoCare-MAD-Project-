@@ -1,12 +1,14 @@
 package com.example.madautocare;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,12 +44,55 @@ public class Add extends AppCompatActivity {
                 String Quantity = add_quantity.getText().toString();
                 String Image = add_image.getText().toString();
 
-                AddDbPass ad = new AddDbPass(Code,Name, Price, Quantity, Image);
-                dbHandler.add(ad);
+                boolean result=validation(Code,Name,Price,Quantity,Image);
+
+                if(result==true) {
+
+                    AddDbPass ad = new AddDbPass(Code, Name, Price, Quantity, Image);
+                    dbHandler.add(ad);
+                    Toast.makeText(Add.this,"Successfully added",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context,Add.class));
+
+                }
 
             }
         });
 
 
     }
+
+
+    public boolean validation(String code,String name,String price,String quantity,String image){
+        if(code.isEmpty()){
+            add_code.requestFocus();
+            add_code.setError("Enter Item Code");
+            return false;
+        }
+        else if(name.isEmpty()){
+            add_name.requestFocus();
+            add_name.setError("Enter Item Name");
+            return false;
+        }
+        else if(price.isEmpty()){
+            add_price.requestFocus();
+            add_price.setError("Enter Item Price");
+            return false;
+        }
+        else if(quantity.isEmpty()){
+            add_quantity.requestFocus();
+            add_quantity.setError("Enter Item Quantity");
+            return false;
+        }
+        else if(image.isEmpty()){
+            add_image.requestFocus();
+            add_image.setError("Enter Item Name");
+            return false;
+        }
+
+        else{
+            return true;
+        }
+
+    }
+
 }

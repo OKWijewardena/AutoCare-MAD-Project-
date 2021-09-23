@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <View
         android:id="@+id/View1"
-        android:layout_width="88dp"
-        android:layout_height="45dp"
+        android:layout_width="371dp"
+        android:layout_height="51dp"
         android:layout_alignParentStart="true"
         android:background="@drawable/table_style" />
 
@@ -15,95 +15,63 @@
         android:id="@+id/ViewCode"
         android:layout_width="67dp"
         android:layout_height="22dp"
-        android:layout_alignEnd="@+id/View1"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="11dp"
-        android:text="Item Code"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:text="Code"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/View1"
         app:layout_constraintStart_toStartOf="@+id/View1"
         app:layout_constraintTop_toTopOf="@+id/View1" />
-
-    <View
-        android:id="@+id/View2"
-        android:layout_width="92dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="3dp"
-        android:layout_toEndOf="@+id/View1"
-        android:background="@drawable/table_style" />
 
     <TextView
         android:id="@+id/ViewName"
-        android:layout_width="74dp"
-        android:layout_height="23dp"
-        android:layout_alignStart="@+id/View2"
-        android:layout_alignEnd="@+id/View2"
+        android:layout_width="84dp"
+        android:layout_height="19dp"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="11dp"
-        android:text="Item Name"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/ViewCode"
+        android:text="Name"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/View1"
         app:layout_constraintStart_toStartOf="@+id/View1"
         app:layout_constraintTop_toTopOf="@+id/View1" />
-
-    <View
-        android:id="@+id/View3"
-        android:layout_width="99dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="3dp"
-        android:layout_toEndOf="@+id/View2"
-        android:background="@drawable/table_style" />
 
     <TextView
         android:id="@+id/ViewPrice"
         android:layout_width="76dp"
         android:layout_height="20dp"
-        android:layout_alignStart="@+id/View3"
-        android:layout_alignEnd="@+id/View3"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="13dp"
-        android:text="Item Price"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/ViewName"
+        android:text="Price"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/View1"
         app:layout_constraintStart_toStartOf="@+id/View1"
         app:layout_constraintTop_toTopOf="@+id/View1" />
 
-    <View
-        android:id="@+id/View4"
-        android:layout_width="99dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="3dp"
-        android:layout_toEndOf="@+id/View3"
-        android:background="@drawable/table_style" />
-
     <TextView
         android:id="@+id/ViewQuantity"
         android:layout_width="58dp"
         android:layout_height="22dp"
-        android:layout_alignStart="@+id/View4"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/ViewPrice"
         android:text="Quantity"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

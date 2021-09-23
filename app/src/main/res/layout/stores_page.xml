@@ -50,7 +50,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
-        android:text="Item Code"
+        android:text="Code"
         android:textColor="@color/white" />
 
     <TextView
@@ -64,7 +64,7 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/textView12"
-        android:text="Item Quantity"
+        android:text="Quantity"
         android:textColor="@color/white" />
 
     <TextView
@@ -77,7 +77,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/textView9"
-        android:text="Item Name"
+        android:text="Name"
         android:textColor="@color/white" />
 
     <TextView
@@ -90,13 +90,13 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/textView10"
-        android:text="Item Name"
+        android:text="Price"
         android:textColor="@color/white" />
 
     <ListView
-        android:id="@+id/ListView"
-        android:layout_width="205dp"
-        android:layout_height="388dp"
+        android:id="@+id/getList"
+        android:layout_width="365dp"
+        android:layout_height="499dp"
         android:layout_below="@+id/view1"
         android:layout_alignStart="@+id/view1"
         android:layout_alignEnd="@+id/view1"

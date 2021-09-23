@@ -94,4 +94,54 @@ public class DbHandler extends SQLiteOpenHelper {
 
         return ge;
     }
+
+    // Delete item
+    public void deleteToDo(String code){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME,"ItemCode =?",new String[]{String.valueOf(code)});
+        db.close();
+    }
+
+    // Get a single data
+    public AddDbPass getSingleData(String code){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE_NAME,new String[]{ITEMCODE,ITEMNAME,ITEMPRICE,ITEMQUANTITY, ITEMIMAGE},
+                ITEMCODE + "= ?",new String[]{String.valueOf(code)}
+                ,null,null,null);
+
+        AddDbPass addDbPass;
+        if(cursor != null){
+            cursor.moveToFirst();
+            addDbPass = new AddDbPass(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4)
+            );
+            return addDbPass;
+        }
+        return null;
+    }
+
+    // Update
+    public int updateSingleRow(AddDbPass addDbPass){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(ITEMCODE,addDbPass.getCode());
+        contentValues.put(ITEMNAME,addDbPass.getNames());
+        contentValues.put(ITEMPRICE,addDbPass.getPrice());
+        contentValues.put(ITEMQUANTITY,addDbPass.getQuantity());
+        contentValues.put(ITEMIMAGE,addDbPass.getImage());
+
+
+        int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",
+                new String[]{String.valueOf(addDbPass.getCode())});
+
+        db.close();
+        return status;
+    }
 }
