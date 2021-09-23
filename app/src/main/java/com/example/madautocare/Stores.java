@@ -13,16 +13,17 @@ public class Stores extends AppCompatActivity {
     private ListView listView;
     private List<AddDbPass> ge;
     private DbHandler dbHandler;
-    Context context;
+    private Context context;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stores_page);
 
-        dbHandler = new DbHandler(context);
+
         listView = findViewById(R.id.getList);
         context = this;
+        dbHandler = new DbHandler(context);
 
         ge = new ArrayList<>();
         ge = dbHandler.getDetails();
