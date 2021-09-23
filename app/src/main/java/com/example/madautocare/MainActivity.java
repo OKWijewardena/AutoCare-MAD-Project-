@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         Home_Add = findViewById(R.id.HomeAdd);
         Home_Store = findViewById(R.id.HomeStore);
-        Home_Update = findViewById(R.id.HomeUpdate);
-        Home_Delete = findViewById(R.id.HomeDelete);
+//        Home_Update = findViewById(R.id.HomeUpdate);
+//        Home_Delete = findViewById(R.id.HomeDelete);
         Home_Sales = findViewById(R.id.HomeSales);
         Home_Settings = findViewById(R.id.HomeSettings);
 
@@ -40,21 +40,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Home_Update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(MainActivity.this,Update.class);
-                startActivity(intent3);
-            }
-        });
-
-        Home_Delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent4 = new Intent(MainActivity.this,Delete.class);
-                startActivity(intent4);
-            }
-        });
+//        Home_Update.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent3 = new Intent(MainActivity.this,Update.class);
+//                startActivity(intent3);
+//            }
+//        });
+//
+//        Home_Delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent4 = new Intent(MainActivity.this,Delete.class);
+//                startActivity(intent4);
+//            }
+//        });
 
         Home_Sales.setOnClickListener(new View.OnClickListener() {
             @Override

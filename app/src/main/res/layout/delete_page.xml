@@ -5,11 +5,11 @@
     android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/deletebtn"
         android:layout_width="103dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/addcode6"
-        android:layout_alignStart="@+id/addcode6"
+        android:layout_below="@+id/deletecode"
+        android:layout_alignStart="@+id/deletecode"
         android:layout_marginStart="0dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/submit_button_style"
@@ -43,7 +43,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/addcode6"
+        android:id="@+id/deletecode"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView34"
