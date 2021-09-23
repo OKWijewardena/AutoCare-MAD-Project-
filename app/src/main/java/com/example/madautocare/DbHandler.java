@@ -15,7 +15,10 @@ public class DbHandler extends SQLiteOpenHelper {
 
     private  static final  int VERSION = 1;
     private static  final String DB_NAME = "AutoCare";
+
     private static  final String TABLE_NAME = "AddItems";
+    private static  final String TABLE_NAME2 = "OrderItems";
+
     private static  final String ITEMCODE = "ItemCode";
     private static  final String ITEMNAME = "ItemName";
     private static  final String ITEMPRICE = "ItemPrice";
@@ -24,10 +27,12 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
     public DbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
 
+    // table Add Items
     @Override
     public void onCreate(SQLiteDatabase db) {
         String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" "+
@@ -40,13 +45,13 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
         db.execSQL(TABLE_CREATE_QUERY);
 
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
         db.execSQL(DROP_TABLE_QUERY);
+
         onCreate(db);
 
     }
