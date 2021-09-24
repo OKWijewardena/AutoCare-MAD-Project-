@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
+    android:background="@drawable/_34842_2_">
 
     <TextView
         android:id="@+id/textView"
@@ -15,7 +15,7 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="169dp"
         android:text="@string/Stores"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="2dp"
         android:text="@string/StoresDS"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp" />
 
     <View
