@@ -16,8 +16,12 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 1;
     private static  final String DB_NAME = "AutoCare";
 
+
     private static  final String TABLE_NAME = "AddItems";
     private static  final String TABLE_NAME2 = "OrderItems";
+
+    //Supplier Database Name
+    private static  final String TABLE_NAME_Suppliers= "Suppliers";
 
     private static  final String ITEMCODE = "ItemCode";
     private static  final String ITEMNAME = "ItemName";
@@ -25,7 +29,11 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String ITEMQUANTITY = "ItemQuantity";
 //    private static  final String ITEMIMAGE = "ItemImage";
 
-
+    //Supplier Database Table Columns
+    private static  final String SuppliersName = "SuppliersName";
+    private static  final String SuppliersEmail = "SuppliersEmail";
+    private static  final String SuppliersPassword = "SuppliersPassword";
+    private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
 
     public DbHandler(@Nullable Context context) {
