@@ -63,6 +63,9 @@
     <string name="update_supplier_name">Supplier Name</string>
     <string name="update_supplier_password">Supplier Password</string>
     <string name="update_supplier_phone_number">Supplier Moblie Number</string>
-
+    <string name="update_supplier_name_text">Update Supplier Name</string>
+    <string name="update_supplier_password_text">Update Supplier Password</string>
+    <string name="update_supplier_phone_number_text">Update Supplier Moblie Number</string>
+    <string name="update_supplier">Update Supplier</string>
 </resources>
 
