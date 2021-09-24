@@ -23,7 +23,7 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String ITEMNAME = "ItemName";
     private static  final String ITEMPRICE = "ItemPrice";
     private static  final String ITEMQUANTITY = "ItemQuantity";
-    private static  final String ITEMIMAGE = "ItemImage";
+//    private static  final String ITEMIMAGE = "ItemImage";
 
 
 
@@ -40,8 +40,7 @@ public class DbHandler extends SQLiteOpenHelper {
                 +ITEMCODE+" TEXT,"
                 +ITEMNAME+" TEXT,"
                 +ITEMPRICE+" TEXT,"
-                +ITEMQUANTITY+" TEXT,"
-                +ITEMIMAGE+" TEXT"+
+                +ITEMQUANTITY+" TEXT"+
                 ");";
         db.execSQL(TABLE_CREATE_QUERY);
 
@@ -64,7 +63,6 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(ITEMNAME,ad.getNames());
         contentValues.put(ITEMPRICE,ad.getPrice());
         contentValues.put(ITEMQUANTITY,ad.getQuantity());
-        contentValues.put(ITEMIMAGE,ad.getImage());
 
         //save to table
         sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
@@ -89,7 +87,6 @@ public class DbHandler extends SQLiteOpenHelper {
                 getdata.setNames(cursor.getString(1));
                 getdata.setPrice(cursor.getString(2));
                 getdata.setQuantity(cursor.getString(3));
-                getdata.setImage(cursor.getString(4));
 
                 ge.add(getdata);
 
@@ -111,7 +108,7 @@ public class DbHandler extends SQLiteOpenHelper {
     public AddDbPass getSingleData(String code){
         SQLiteDatabase db = getWritableDatabase();
 
-        Cursor cursor = db.query(TABLE_NAME,new String[]{ITEMCODE,ITEMNAME,ITEMPRICE,ITEMQUANTITY, ITEMIMAGE},
+        Cursor cursor = db.query(TABLE_NAME,new String[]{ITEMCODE,ITEMNAME,ITEMPRICE, ITEMQUANTITY},
                 ITEMCODE + "= ?",new String[]{String.valueOf(code)}
                 ,null,null,null);
 
@@ -122,8 +119,7 @@ public class DbHandler extends SQLiteOpenHelper {
                     cursor.getString(0),
                     cursor.getString(1),
                     cursor.getString(2),
-                    cursor.getString(3),
-                    cursor.getString(4)
+                    cursor.getString(3)
             );
             return addDbPass;
         }
@@ -140,7 +136,6 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(ITEMNAME,addDbPass.getNames());
         contentValues.put(ITEMPRICE,addDbPass.getPrice());
         contentValues.put(ITEMQUANTITY,addDbPass.getQuantity());
-        contentValues.put(ITEMIMAGE,addDbPass.getImage());
 
 
         int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",

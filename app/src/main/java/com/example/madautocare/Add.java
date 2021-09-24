@@ -30,7 +30,7 @@ public class Add extends AppCompatActivity {
         add_name = findViewById(R.id.addname);
         add_price = findViewById(R.id.addprice);
         add_quantity = findViewById(R.id.addquantity);
-        add_image = findViewById(R.id.addimage);
+//        add_image = findViewById(R.id.addimage);
         add_submit = findViewById(R.id.addsubmit);
         context = this;
         dbHandler = new DbHandler(context);
@@ -42,13 +42,13 @@ public class Add extends AppCompatActivity {
                 String Name = add_name.getText().toString();
                 String Price = add_price.getText().toString();
                 String Quantity = add_quantity.getText().toString();
-                String Image = add_image.getText().toString();
+//                String Image = add_image.getText().toString();
 
-                boolean result=validation(Code,Name,Price,Quantity,Image);
+                boolean result=validation(Code,Name,Price,Quantity);
 
                 if(result==true) {
 
-                    AddDbPass ad = new AddDbPass(Code, Name, Price, Quantity, Image);
+                    AddDbPass ad = new AddDbPass(Code, Name, Price, Quantity);
                     dbHandler.add(ad);
                     Toast.makeText(Add.this,"Successfully added",Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context,Add.class));
@@ -62,7 +62,7 @@ public class Add extends AppCompatActivity {
     }
 
 
-    public boolean validation(String code,String name,String price,String quantity,String image){
+    public boolean validation(String code,String name,String price,String quantity){
         if(code.isEmpty()){
             add_code.requestFocus();
             add_code.setError("Enter Item Code");
@@ -81,11 +81,6 @@ public class Add extends AppCompatActivity {
         else if(quantity.isEmpty()){
             add_quantity.requestFocus();
             add_quantity.setError("Enter Item Quantity");
-            return false;
-        }
-        else if(image.isEmpty()){
-            add_image.requestFocus();
-            add_image.setError("Enter Item Name");
             return false;
         }
 
