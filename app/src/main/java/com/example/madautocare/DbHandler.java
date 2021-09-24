@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    private  static final  int VERSION = 1;
+    private  static final  int VERSION = 2;
     private static  final String DB_NAME = "AutoCare";
 
 
