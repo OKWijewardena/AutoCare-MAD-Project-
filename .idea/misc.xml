@@ -3,14 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_supplier.xml" value="0.2" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_items_page.xml" value="0.25226449275362317" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_supplier.xml" value="0.264" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/admin_category_page.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/single_supplier.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/start_activity.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/stores_page.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/supplier_page.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/update_page.xml" value="0.23867753623188406" />
-        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/update_supplier.xml" value="0.2" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/update_supplier.xml" value="0.4" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/view_supplier.xml" value="0.23867753623188406" />
       </map>
     </option>

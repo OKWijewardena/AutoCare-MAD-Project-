@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class add_supplier extends AppCompatActivity {
     private EditText Supplier_email;
     private EditText Supplier_pass;
     private EditText Supplier_phone_number;
+    private ImageButton Back;
 
     //Database variables
     private DbHandler dbHandler;
@@ -30,9 +32,17 @@ public class add_supplier extends AppCompatActivity {
         Supplier_email = findViewById(R.id.supplier_email);
         Supplier_pass = findViewById(R.id.supplier_pass);
         Supplier_phone_number = findViewById(R.id.supplier_phone_number);
+        Back = findViewById(R.id.backbtn);
         context = this;
 
         dbHandler = new DbHandler(context);
+
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,supplier_page.class));
+            }
+        });
 
     }
     private Boolean validatename(){
