@@ -2,6 +2,7 @@ package com.example.madautocare;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -43,7 +44,6 @@ public class add_supplier extends AppCompatActivity {
                 startActivity(new Intent(context,supplier_page.class));
             }
         });
-
     }
     private Boolean validatename(){
         String Supplier_n = Supplier_name.getText().toString();
@@ -108,6 +108,16 @@ public class add_supplier extends AppCompatActivity {
         String Supplier_e = Supplier_email.getText().toString();
         String Supplier_p = Supplier_pass.getText().toString();
         String Supplier_p_number = Supplier_phone_number.getText().toString();
+
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        final Intent chooser;
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Supplier_e});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare Admin Panel.");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "You can use this email"+" "+Supplier_e+"and use this password"+" "+ Supplier_p+" "+"login to the system. Thank you");
+        emailIntent.setType("message/rfc822");
+        chooser=emailIntent.createChooser(emailIntent,"send email test app");
+        System.out.println(chooser);
 
         supplier_modle add = new supplier_modle(Supplier_n,Supplier_e,Supplier_p,Supplier_p_number);
 

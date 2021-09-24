@@ -24,7 +24,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="363dp"
                 android:layout_marginBottom="9dp"
-                android:backgroundTint="#7B32F4"
+                android:backgroundTint="@color/dark_navy_blue"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.041"
@@ -93,7 +93,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginTop="150px">
+                android:layout_marginTop="30px">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
