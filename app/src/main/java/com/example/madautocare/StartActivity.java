@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
         Supplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(StartActivity.this,MainActivity.class);
+                Intent intent1 = new Intent(StartActivity.this,SupplierLogin.class);
                 startActivity(intent1);
             }
         });
