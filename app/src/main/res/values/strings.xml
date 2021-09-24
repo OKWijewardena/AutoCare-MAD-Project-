@@ -32,5 +32,37 @@
     <string name="completeDS">You have complete orders..</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+
+    <!--    Admin Category Page String variables-->
+    <string name="admin_category_button">Click Here</string>
+    <string name="admin_category_co">Customer and Orders</string>
+    <string name="admin_category_ss">Sales and Suppliers</string>
+    <string name="admin_category_co_me">Manage Customer and Orders</string>
+    <string name="admin_category_ss_me">Manage Sales and Suppliers</string>
+
+    <!--    Supplier Page String variables-->
+    <string name="Add">Register Supplier</string>
+    <string name="add_btn">Register</string>
+    <string name="Add_mess">Register to the supplier in the system </string>
+    <string name="view">View All Suppliers</string>
+    <string name="view_btn">View</string>
+    <string name="view_mess">View the all suppliers in this system</string>
+
+    <!--    Supplier Registration String variables-->
+    <string name="Enter_supplier_name">Enter the Supplier Name</string>
+    <string name="Enter_supplier_email">Enter the Supplier Email</string>
+    <string name="Enter_supplier_pass">Enter the Password</string>
+    <string name="Enter_supplier_number">Enter the Mobile Number</string>
+
+    <!--    Single Supplier View String variables-->
+    <string name="Supplier_name">Supplier Name</string>
+    <string name="Supplier_email">Supplier Email</string>
+    <string name="Supplier_phone_number">Supplier Moblie Number</string>
+
+    <!--    Update Supplier Page String variables-->
+    <string name="update_supplier_name">Supplier Name</string>
+    <string name="update_supplier_password">Supplier Password</string>
+    <string name="update_supplier_phone_number">Supplier Moblie Number</string>
+
 </resources>
 
