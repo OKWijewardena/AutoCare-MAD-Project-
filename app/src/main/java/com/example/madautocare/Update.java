@@ -42,7 +42,7 @@ public class Update extends AppCompatActivity {
                 String PriceText = Update_Price.getText().toString();
                 String QuantityText = Update_Qunatity.getText().toString();
 
-                AddDbPass data = new AddDbPass(code,NameText,PriceText,QuantityText,addDbPass.getImage());
+                AddDbPass data = new AddDbPass(code,NameText,PriceText,QuantityText);
 
                 int state = dbHandler.updateSingleRow(data);
                 System.out.println(state);

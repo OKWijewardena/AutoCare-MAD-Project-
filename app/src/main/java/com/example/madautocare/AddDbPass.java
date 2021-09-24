@@ -1,25 +1,23 @@
 package com.example.madautocare;
 
 public class AddDbPass {
-    private String code,names,price,quantity,image;
+    private String code,names,price,quantity;
 
     public AddDbPass(){
 
     }
 
-    public AddDbPass(String code, String names, String price, String quantity, String image) {
+    public AddDbPass(String code, String names, String price, String quantity) {
         this.code = code;
         this.names = names;
         this.price = price;
         this.quantity = quantity;
-        this.image = image;
     }
 
-    public AddDbPass(String names, String price, String quantity, String image) {
+    public AddDbPass(String names, String price, String quantity) {
         this.names = names;
         this.price = price;
         this.quantity = quantity;
-        this.image = image;
     }
 
     public String getCode() {
@@ -54,13 +52,13 @@ public class AddDbPass {
         this.quantity = quantity;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
+//    public String getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
 
     public String Sales(){
         int price = Integer.parseInt(getPrice());
