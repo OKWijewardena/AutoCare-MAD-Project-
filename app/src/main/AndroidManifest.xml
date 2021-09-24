@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
+        <activity android:name=".SupplierLogin"></activity>
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,25 +17,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Add" />
         <activity android:name=".Stores" />
         <activity android:name=".Update" />
         <activity android:name=".Delete" />
         <activity android:name=".Sales" />
         <activity android:name=".Settings" />
-        <activity android:name=".admin_category_page"
-            android:exported="true"/>
-        <activity android:name=".update_supplier"
-            android:exported="true"
-            android:parentActivityName=".supplier_page"/>
-        <activity android:name=".view_supplier"
+        <activity
+            android:name=".admin_category_page"
+            android:exported="true" />
+        <activity
+            android:name=".update_supplier"
             android:exported="true"
             android:parentActivityName=".supplier_page" />
-        <activity android:name=".supplier_page"
+        <activity
+            android:name=".view_supplier"
+            android:exported="true"
+            android:parentActivityName=".supplier_page" />
+        <activity
+            android:name=".supplier_page"
             android:exported="true"
             android:parentActivityName=".admin_category_page" />
-        <activity android:name=".add_supplier"
+        <activity
+            android:name=".add_supplier"
             android:parentActivityName=".supplier_page" />
     </application>
 
