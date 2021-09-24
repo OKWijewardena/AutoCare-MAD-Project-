@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class Add extends AppCompatActivity {
-    private EditText add_code,add_name,add_price,add_quantity,add_image;
+    private EditText add_code,add_name,add_price,add_quantity;
+    private ImageButton back_button;
     private Button add_submit;
     private DbHandler dbHandler;
     private Context context;
@@ -26,6 +28,7 @@ public class Add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_items_page);
 
+        back_button = findViewById(R.id.BackButton);
         add_code = findViewById(R.id.addcode);
         add_name = findViewById(R.id.addname);
         add_price = findViewById(R.id.addprice);
@@ -34,6 +37,13 @@ public class Add extends AppCompatActivity {
         add_submit = findViewById(R.id.addsubmit);
         context = this;
         dbHandler = new DbHandler(context);
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,MainActivity.class));
+            }
+        });
 
         add_submit.setOnClickListener(new View.OnClickListener() {
             @Override
