@@ -27,6 +27,13 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+        Admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent admin = new Intent(StartActivity.this,admin_category_page.class);
+                startActivity(admin);
+            }
+        });
 
     }
 }
