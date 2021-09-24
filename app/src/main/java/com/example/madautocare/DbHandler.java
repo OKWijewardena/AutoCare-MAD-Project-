@@ -13,11 +13,15 @@ import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    private  static final  int VERSION = 1;
+    private  static final  int VERSION = 2;
     private static  final String DB_NAME = "AutoCare";
+
 
     private static  final String TABLE_NAME = "AddItems";
     private static  final String TABLE_NAME2 = "OrderItems";
+
+    //Supplier Database Name
+    private static  final String TABLE_NAME_Suppliers= "Suppliers";
 
     private static  final String ITEMCODE = "ItemCode";
     private static  final String ITEMNAME = "ItemName";
@@ -25,7 +29,11 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String ITEMQUANTITY = "ItemQuantity";
 //    private static  final String ITEMIMAGE = "ItemImage";
 
-
+    //Supplier Database Table Columns
+    private static  final String SuppliersName = "SuppliersName";
+    private static  final String SuppliersEmail = "SuppliersEmail";
+    private static  final String SuppliersPassword = "SuppliersPassword";
+    private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
 
     public DbHandler(@Nullable Context context) {
@@ -44,6 +52,17 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
         db.execSQL(TABLE_CREATE_QUERY);
 
+        //Supplier
+        String TABLE_CREATE = "CREATE TABLE "+TABLE_NAME_Suppliers+" "+
+                "("
+                +SuppliersName+" TEXT,"
+                +SuppliersEmail+" TEXT,"
+                +SuppliersPassword+" TEXT,"
+                +SuppliersPhoneNumber+
+                ");";
+
+        db.execSQL(TABLE_CREATE);
+
     }
 
     @Override
@@ -53,6 +72,10 @@ public class DbHandler extends SQLiteOpenHelper {
 
         onCreate(db);
 
+        //Supplier
+        String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME_Suppliers;
+        db.execSQL(DROP_TABLE);
+        onCreate(db);
     }
     // add details
     public void add(AddDbPass ad){
@@ -140,6 +163,95 @@ public class DbHandler extends SQLiteOpenHelper {
 
         int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",
                 new String[]{String.valueOf(addDbPass.getCode())});
+
+        db.close();
+        return status;
+    }
+
+    //Add the Suppliers
+    public void additem(supplier_modle add){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(SuppliersName,add.getSuppliers_Name());
+        contentValues.put(SuppliersEmail,add.getSuppliers_Email());
+        contentValues.put(SuppliersPassword,add.getSuppliers_Password());
+        contentValues.put(SuppliersPhoneNumber,add.getSuppliers_Phone_Number());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE_NAME_Suppliers,null,contentValues);
+        // close database
+        sqLiteDatabase.close();
+    }
+
+    // Get all suppliers into a list
+    public List<supplier_modle> getallsuppliers(){
+
+        List<supplier_modle> list = new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE_NAME_Suppliers;
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do {
+                // Create new sm object
+                supplier_modle sm = new supplier_modle();
+
+
+                sm.setSuppliers_Name(cursor.getString(0));
+                sm.setSuppliers_Email(cursor.getString(1));
+                sm.setSuppliers_Password(cursor.getString(2));
+                sm.setSuppliers_Phone_Number(cursor.getString(3));
+
+                list.add(sm);
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+    // Delete the Supplier
+    public void deletesupplier(String email){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME_Suppliers,"SuppliersEmail = ?",new String[]{String.valueOf(email)});
+        db.close();
+    }
+
+    public supplier_modle getSinglesupplier(String email){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE_NAME_Suppliers,new String[]{SuppliersName,SuppliersEmail,SuppliersPassword,SuppliersPhoneNumber},
+                SuppliersEmail + "= ?",new String[]{String.valueOf(email)}
+                ,null,null,null);
+
+        supplier_modle update;
+        if(cursor != null){
+            cursor.moveToFirst();
+            update = new supplier_modle(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3)
+            );
+            return update;
+        }
+        return null;
+    }
+
+    // Update a single Supplier
+    public int updateSinglesupplier(supplier_modle updated){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(SuppliersName,updated.getSuppliers_Name());
+        contentValues.put(SuppliersEmail, updated.getSuppliers_Email());
+        contentValues.put(SuppliersPassword,updated.getSuppliers_Password());
+        contentValues.put(SuppliersPhoneNumber,updated.getSuppliers_Phone_Number());
+
+        int status = db.update(TABLE_NAME_Suppliers,contentValues,SuppliersEmail +" =?",
+                new String[]{String.valueOf(updated.getSuppliers_Email())});
 
         db.close();
         return status;
