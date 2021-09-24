@@ -61,4 +61,13 @@ public class AddDbPass {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String Sales(){
+        int price = Integer.parseInt(getPrice());
+        int quantity = Integer.parseInt(getQuantity());
+        int total = price*quantity;
+        String total_String = String.valueOf(total);
+
+        return total_String;
+    }
 }

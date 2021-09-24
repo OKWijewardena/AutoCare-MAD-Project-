@@ -16,11 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".Orders" />
-        <activity android:name=".Complete" />
-        <activity android:name=".Settings2" />
-        <activity android:name=".Suplier"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".Add" />
         <activity android:name=".Stores" />

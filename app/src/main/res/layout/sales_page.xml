@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
+    android:background="@drawable/supercar_lambo_white">
 
     <View
         android:id="@+id/view2"
@@ -16,15 +16,15 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="94dp"
-        android:layout_height="25dp"
+        android:layout_width="131dp"
+        android:layout_height="22dp"
         android:layout_alignTop="@+id/view2"
         android:layout_alignBottom="@+id/view2"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/textView18"
-        android:text="Quantity"
+        android:text="Income of the items"
         android:textColor="@color/white" />
 
     <TextView
@@ -64,7 +64,7 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="169dp"
         android:text="@string/Sales"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -76,10 +76,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="2dp"
         android:text="@string/SalesDS"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp" />
 
     <ListView
+        android:id="@+id/SalesView"
         android:layout_width="367dp"
         android:layout_height="408dp"
         android:layout_below="@+id/view2"

@@ -21,7 +21,6 @@ public class Delete extends AppCompatActivity {
         setContentView(R.layout.delete_page);
 
         add_code = findViewById(R.id.deletecode);
-        delete = findViewById(R.id.delete);
         context = this;
         dbHandler = new DbHandler(context);
 

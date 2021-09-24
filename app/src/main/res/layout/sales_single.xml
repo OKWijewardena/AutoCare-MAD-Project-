@@ -12,7 +12,7 @@
         android:background="@drawable/table_style" />
 
     <TextView
-        android:id="@+id/ViewCode"
+        android:id="@+id/SalesCode"
         android:layout_width="67dp"
         android:layout_height="22dp"
         android:layout_alignBottom="@+id/View1"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/View1" />
 
     <TextView
-        android:id="@+id/ViewName"
+        android:id="@+id/SalesName"
         android:layout_width="84dp"
         android:layout_height="19dp"
         android:layout_alignBottom="@+id/View1"
@@ -37,7 +37,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
-        android:layout_toEndOf="@+id/ViewCode"
+        android:layout_toEndOf="@+id/SalesCode"
         android:text="Name"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="@+id/View1" />
 
     <TextView
-        android:id="@+id/ViewQuantity"
+        android:id="@+id/Sales"
         android:layout_width="58dp"
         android:layout_height="22dp"
         android:layout_alignBottom="@+id/View1"
@@ -54,7 +54,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
-        android:layout_toEndOf="@+id/ViewName"
+        android:layout_toEndOf="@+id/SalesName"
         android:text="Quantity"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

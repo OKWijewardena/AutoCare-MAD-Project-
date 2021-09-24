@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/papers_co_ad74_bmw_car_black_light_41_iphone_wallpaper">
+    android:background="@drawable/_019_bugatti_divo_black_supercar_front_view_iphone_1080x1920">
 
     <EditText
         android:id="@+id/addcode"
