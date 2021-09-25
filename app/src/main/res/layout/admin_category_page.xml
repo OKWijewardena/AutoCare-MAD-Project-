@@ -132,7 +132,7 @@
             app:layout_constraintVertical_bias="0.331" />
 
         <Button
-            android:id="@+id/btn_ss"
+            android:id="@+id/btnn_ss"
             android:layout_width="149dp"
             android:layout_height="48dp"
             android:layout_marginBottom="32dp"
@@ -152,7 +152,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.761"
-            app:layout_constraintStart_toEndOf="@+id/btn_ss"
+            app:layout_constraintStart_toEndOf="@+id/btnn_ss"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.475"
             app:srcCompat="@drawable/supplier"
