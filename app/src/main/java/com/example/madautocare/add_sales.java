@@ -113,9 +113,12 @@ public class add_sales extends AppCompatActivity {
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Customer_e});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare Billing Center.");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear "+Customer_n+",\n\nYou made our day, thank you for choosing us for your purchase. We are happy to meet your purchase order or service and value our loyal customers. You have already paid Rs."+Customer_a+" today to us.\n\nRegards\n(AutoCare Billing Center)");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear "+Customer_n+",\n\nYou made our day, thank " +
+                "you for choosing us for your purchase. We are happy to meet your purchase order or " +
+                "service and value our loyal customers. You have already paid Rs."+Customer_a+" today to us." +
+                "\n\nRegards\n(AutoCare Billing Center)");
         emailIntent.setType("message/rfc822");
-        chooser=emailIntent.createChooser(emailIntent,"Select The App Send E-Bill");
+        chooser=emailIntent.createChooser(emailIntent,"Select The App Send To The E-Bill");
 
 
         if(Parts.isChecked()){
