@@ -13,6 +13,9 @@
         <activity android:name=".CustomerItemList"></activity>
 
         <activity
+            android:name=".add_sales"
+            android:exported="true" />
+        <activity
             android:name=".manage_sales"
             android:exported="true" />
         <activity

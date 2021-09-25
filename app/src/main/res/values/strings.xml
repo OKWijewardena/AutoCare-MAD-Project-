@@ -89,5 +89,16 @@
     <string name="sales_view_T">View Sales</string>
     <string name="sales_view_mess">You Can View The All Sales.</string>
     <string name="sales_view_btn">View</string>
+
+    <!--    Add Sales Page String variables-->
+    <string name="add_sales_name">Enter the Customer Name</string>
+    <string name="add_sales_email">Enter the Customer E-mail</string>
+    <string name="add_sales_phone">Enter the Customer Mobile Number</string>
+    <string name="add_sales_amount">Enter the Customer Bill Amount</string>
+    <string name="add_sales_type">Enter the Customer Billing Type</string>
+    <string name="add_sales_T">Add Sales</string>
+    <string name="add_sales">Submit</string>
+    <string name="add_radio_parts">Parts</string>
+    <string name="add_radio_service">Service</string>
 </resources>
 
