@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +20,7 @@ public class view_supplier extends AppCompatActivity {
     private List<com.example.madautocare.supplier_modle> lists;
     private DbHandler dbHandler;
     private ListView listView;
+    private ImageButton Back;
     Context context;
 
     @Override
@@ -27,6 +29,7 @@ public class view_supplier extends AppCompatActivity {
         setContentView(R.layout.view_supplier);
         context = this;
 
+        Back=findViewById(R.id.backbtn);
         listView = findViewById(R.id.listview);
         dbHandler = new DbHandler(context);
         lists = new ArrayList<>();
@@ -36,6 +39,12 @@ public class view_supplier extends AppCompatActivity {
         ListAdapter adapter = new ListAdapter(context,R.layout.single_supplier,lists);
         listView.setAdapter(adapter);
 
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,supplier_page.class));
+            }
+        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -19,7 +19,7 @@ public class admin_category_page extends AppCompatActivity {
         btn_ss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent item_page = new Intent(admin_category_page.this, supplier_page.class);
+                Intent item_page = new Intent(admin_category_page.this, SaSDashboard.class);
                 startActivity(item_page);
                 finish();
             }
