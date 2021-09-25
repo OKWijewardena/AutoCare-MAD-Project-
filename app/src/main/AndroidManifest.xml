@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
-
-        <activity android:name=".CustomerItemList"></activity>
-
+        <activity
+            android:name=".customerSideAdmin"
+            android:exported="true" />
+        <activity android:name=".CustomerItemList" />
+        <activity
+            android:name=".sales_list"
+            android:exported="true" />
         <activity
             android:name=".add_sales"
             android:exported="true" />
@@ -21,7 +25,6 @@
         <activity
             android:name=".SaSDashboard"
             android:exported="true" />
-
         <activity android:name=".SupplierLogin" />
         <activity android:name=".StartActivity">
             <intent-filter>
@@ -59,6 +62,7 @@
 
 
 
+
         <activity
             android:name=".NormalServiceContent"
             android:exported="true" />
@@ -78,6 +82,32 @@
             android:exported="true" />
         <activity
             android:name=".Signin"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".Bookings_main"
+            android:exported="true" />
+        <activity
+            android:name=".BookingComplete_View_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Order_Details_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Booking_View_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Booking_Details_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Customer_Delete_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Customer_Add_Page"
+            android:exported="true" />
+        <activity
+            android:name=".Customer_View_Page"
             android:exported="true" />
 
     </application>

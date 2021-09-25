@@ -101,6 +101,7 @@
     <string name="add_radio_parts">Parts</string>
     <string name="add_radio_service">Service</string>
 
+
 <!--    Add Service Details String Variables-->
     <string name="btn1">Full Service</string>
     <string name="btn2">Normal Service</string>
@@ -109,5 +110,15 @@
     <string name="row1content">STAGE 2:  ROAD TEST</string>
     <string name="row2">STAGE 3: VEHICLE ON FLOOR</string>
     <string name="normalservice">Normal Service</string>
+
+    <!--    Single Sales View String variables-->
+    <string name="Sales_name">Sales Name</string>
+    <string name="Sales_email">Sales Email</string>
+    <string name="Sales_type">Sales_type</string>
+    <string name="Sales_amount">1000</string>
+
+    <!--    View All Sales String variables-->
+    <string name="View_Sales">View Sales</string>
+
 </resources>
 

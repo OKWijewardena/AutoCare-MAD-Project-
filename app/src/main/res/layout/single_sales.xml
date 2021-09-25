@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="367dp"
+        android:layout_height="75dp"
+        android:background="#6AACA8A8"
+        android:layout_marginBottom="10px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022">
+
+        <TextView
+            android:id="@+id/sales_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/Sales_name"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sales_email"
+            android:layout_width="186dp"
+            android:layout_height="22dp"
+            android:text="@string/Sales_email"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sales_name"
+            app:layout_constraintVertical_bias="0.32999998" />
+
+        <TextView
+            android:id="@+id/sales_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Sales_type"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintStart_toEndOf="@+id/sales_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.285" />
+
+        <TextView
+            android:id="@+id/sales_amount"
+            android:layout_width="89dp"
+            android:layout_height="19dp"
+            android:text="@string/Sales_amount"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.539"
+            app:layout_constraintStart_toEndOf="@+id/sales_email"
+            app:layout_constraintTop_toBottomOf="@+id/sales_type"
+            app:layout_constraintVertical_bias="0.37" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

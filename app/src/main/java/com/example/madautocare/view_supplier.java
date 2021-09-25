@@ -17,7 +17,7 @@ import java.util.List;
 
 public class view_supplier extends AppCompatActivity {
 
-    private List<com.example.madautocare.supplier_modle> lists;
+    private List<supplier_modle> lists;
     private DbHandler dbHandler;
     private ListView listView;
     private ImageButton Back;

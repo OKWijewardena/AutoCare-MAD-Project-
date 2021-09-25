@@ -44,7 +44,7 @@ public class manage_sales extends AppCompatActivity {
         View.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
-                startActivity(new Intent(context,SaSDashboard.class));
+                startActivity(new Intent(context,sales_list.class));
             }
         });
     }
