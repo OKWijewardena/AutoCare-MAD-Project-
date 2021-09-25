@@ -74,13 +74,13 @@
             android:id="@+id/sales_cus_radio_parts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/add_radio_parts" />
 
         <RadioButton
             android:id="@+id/sales_cus_radio_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/add_radio_service" />
     </RadioGroup>
 
     <EditText
