@@ -77,6 +77,27 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE);
         onCreate(db);
     }
+
+    //Check Supplier name
+    public boolean CheckSupplierName(String SupplierName){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Supplers where SupplersName = ?",new String[] {SupplierName});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //Check Supplier password
+    public boolean CheckSupplierPassword(String SupplierName,String SupplierPassword){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where SuppliersName = ? and SuppliersPassword = ?",new String[] {SupplierName,SupplierPassword});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
     // add details
     public void add(AddDbPass ad){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
