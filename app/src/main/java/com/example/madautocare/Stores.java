@@ -55,7 +55,7 @@ public class Stores extends AppCompatActivity {
                 builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dbHandler.deleteToDo(data.getCode());
+                        dbHandler.deleteItem(data.getCode());
                         startActivity(new Intent(context,Stores.class));
                     }
                 });

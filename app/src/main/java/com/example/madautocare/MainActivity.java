@@ -11,7 +11,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button Home_Add,Home_Store,Home_Update,Home_Delete,Home_Sales,Home_Settings;
+    private Button Home_Add,Home_Store,Home_Update,Home_Delete,Home_Sales,Home_Settings,log_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
 //        Home_Delete = findViewById(R.id.HomeDelete);
         Home_Sales = findViewById(R.id.HomeSales);
         Home_Settings = findViewById(R.id.HomeSettings);
+        log_out = findViewById(R.id.logout);
+
+        log_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent0 = new Intent(MainActivity.this,SupplierLogin.class);
+                startActivity(intent0);
+            }
+        });
 
         Home_Add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent6 = new Intent(MainActivity.this,Settings.class);
+                final String code1 = getIntent().getStringExtra("code");
+                intent6.putExtra("code2",code1);
                 startActivity(intent6);
             }
         });

@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
+
+        <activity android:name=".CustomerItemList"></activity>
+
         <activity
             android:name=".manage_sales"
             android:exported="true" />
         <activity
             android:name=".SaSDashboard"
             android:exported="true" />
+
         <activity android:name=".SupplierLogin" />
         <activity android:name=".StartActivity">
             <intent-filter>
