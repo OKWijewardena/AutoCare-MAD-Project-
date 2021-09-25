@@ -30,6 +30,7 @@
         android:hint="Item Name"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
@@ -48,6 +49,7 @@
         android:hint="@string/addquantity"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
@@ -66,6 +68,7 @@
         android:hint="Item Price"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
@@ -92,7 +95,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="78dp"
         android:layout_marginEnd="169dp"
-        android:text="@string/UpdateQuantity"
+        android:text="Update Item"
         android:textColor="@color/white"
         android:textSize="20sp" />
 </RelativeLayout>

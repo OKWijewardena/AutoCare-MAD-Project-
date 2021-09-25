@@ -36,5 +36,15 @@ public class StartActivity extends AppCompatActivity {
         });
 
 
+
+//        Customer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent customer = new Intent(StartActivity.this,CustomerItemList.class);
+//                startActivity(customer);
+//            }
+//        });
+
+
     }
 }

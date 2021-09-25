@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ public class update_supplier extends AppCompatActivity {
     private EditText SupplierPhoneNumber;
     private EditText SupplierPassword;
     private Button Update;
+    private ImageButton Back;
     private DbHandler dbHandler;
     private Context context;
 
@@ -26,6 +28,7 @@ public class update_supplier extends AppCompatActivity {
         context = this;
         dbHandler = new DbHandler(context);
 
+        Back = findViewById(R.id.backbtn);
         SupplierName = findViewById(R.id.update_s_name);
         SupplierPhoneNumber = findViewById(R.id.update_s_phone);
         SupplierPassword = findViewById(R.id.update_s_pass);
@@ -50,6 +53,12 @@ public class update_supplier extends AppCompatActivity {
                 int state = dbHandler.updateSinglesupplier(up);
                 System.out.println(state);
                 startActivity(new Intent(context, supplier_page.class));
+            }
+        });
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,view_supplier.class));
             }
         });
     }
