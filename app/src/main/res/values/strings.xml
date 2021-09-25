@@ -68,7 +68,7 @@
     <string name="update_supplier_phone_number_text">Update Supplier Moblie Number</string>
     <string name="update_supplier">Update Supplier</string>
 
-<!--    Sales and Supplier Page String variables-->
+    <!--    Sales and Supplier Page String variables-->
     <string name="Dashbord_sales_count_T">Total Sales</string>
     <string name="Dashbord_sales_count">Rs.0</string>
     <string name="Dashbord_supplier_count_T">Total Suppliers</string>
