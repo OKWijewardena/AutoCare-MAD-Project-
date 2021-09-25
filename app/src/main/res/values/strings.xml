@@ -68,7 +68,7 @@
     <string name="update_supplier_phone_number_text">Update Supplier Moblie Number</string>
     <string name="update_supplier">Update Supplier</string>
 
-<!--    Sales and Supplier Page String variables-->
+    <!--    Sales and Supplier Page String variables-->
     <string name="Dashbord_sales_count_T">Total Sales</string>
     <string name="Dashbord_sales_count">Rs.0</string>
     <string name="Dashbord_supplier_count_T">Total Suppliers</string>
@@ -80,5 +80,14 @@
     <string name="Dashbord_sales">Manage Sales</string>
     <string name="Dashbord_sales_mess">You can insert the Sales and also you show the all sales.</string>
     <string name="Dashbord_sales_btn">Click Here</string>
+
+    <!--    Sales Page String variables-->
+    <string name="sales_dash">Manage Sales</string>
+    <string name="sales_add_T">Add Sales</string>
+    <string name="sales_add_mess">You Can Add Sales and Send to the Customer E-Bill.</string>
+    <string name="sales_add_btn">ADD</string>
+    <string name="sales_view_T">View Sales</string>
+    <string name="sales_view_mess">You Can View The All Sales.</string>
+    <string name="sales_view_btn">View</string>
 </resources>
 
