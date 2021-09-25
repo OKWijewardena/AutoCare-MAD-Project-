@@ -108,32 +108,34 @@ public class add_sales extends AppCompatActivity {
         String Customer_p_number = CustomerNumber.getText().toString();
         String Customer_a = CustomerAmount.getText().toString();
 
-//        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-//        final Intent chooser;
-//        emailIntent.setData(Uri.parse("mailto:"));
-//        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Supplier_e});
-//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare Admin Panel.");
-//        emailIntent.putExtra(Intent.EXTRA_TEXT, "You can use this email"+" "+Supplier_e+"and use this password"+" "+ Supplier_p+" "+"login to the system. Thank you");
-//        emailIntent.setType("message/rfc822");
-//        chooser=emailIntent.createChooser(emailIntent,"send email test app");
-//        System.out.println(chooser);
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        final Intent chooser;
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Customer_e});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare Billing Center.");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear "+Customer_n+",\n\nYou made our day, thank you for choosing us for your purchase. We are happy to meet your purchase order or service and value our loyal customers. You have already paid Rs."+Customer_a+" today to us.\n\nRegards\n(AutoCare Billing Center)");
+        emailIntent.setType("message/rfc822");
+        chooser=emailIntent.createChooser(emailIntent,"Select The App Send E-Bill");
+
 
         if(Parts.isChecked()){
 
             sales_modle add = new sales_modle(Customer_n,Customer_e,"Parts",Customer_p_number,Customer_a);
 
             dbHandler.addsales(add);
-
-            Toast.makeText(getApplicationContext(),"Sales Added Successfully!",Toast.LENGTH_LONG).show();
             startActivity(new Intent(context,manage_sales.class));
+            startActivity(chooser);
+            Toast.makeText(getApplicationContext(),"Sales Added Successfully!",Toast.LENGTH_LONG).show();
+
         }else if(Service.isChecked()){
 
             sales_modle add = new sales_modle(Customer_n,Customer_e,"Service",Customer_p_number,Customer_a);
 
             dbHandler.addsales(add);
-
-            Toast.makeText(getApplicationContext(),"Sales Added Successfully!",Toast.LENGTH_LONG).show();
             startActivity(new Intent(context,manage_sales.class));
+            startActivity(chooser);
+            Toast.makeText(getApplicationContext(),"Sales Added Successfully!",Toast.LENGTH_LONG).show();
+
         }else {
             Toast.makeText(this,"Please Select the Customer Billing Type",Toast.LENGTH_LONG).show();
         }
