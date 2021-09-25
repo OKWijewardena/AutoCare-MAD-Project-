@@ -26,6 +26,9 @@ public class sales_modle {
         CustomerBillAmount = customerBillAmount;
     }
 
+    public sales_modle(){
+
+    }
     public int getId() {
         return id;
     }
