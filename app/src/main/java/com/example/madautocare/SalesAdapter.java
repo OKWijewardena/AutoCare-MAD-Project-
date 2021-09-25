@@ -37,8 +37,6 @@ public class SalesAdapter extends ArrayAdapter {
         SalesName.setText(getdata.getNames());
         Sales.setText(getdata.Sales());
 
-
-
         return row;
     }
 }
