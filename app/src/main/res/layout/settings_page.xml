@@ -7,7 +7,7 @@
 
 
     <EditText
-        android:id="@+id/addcode7"
+        android:id="@+id/SName"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView76"
@@ -17,9 +17,10 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="72dp"
         android:background="@drawable/inputs"
-        android:hint="Supplier id"
+        android:hint="Supplier Name"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
@@ -32,20 +33,20 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="72dp"
         android:layout_marginTop="22dp"
-        android:text="@string/id"
+        android:text="Supplier Name"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button5"
+        android:id="@+id/SSubmit"
         android:layout_width="138dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/addcode12"
-        android:layout_alignStart="@+id/addcode12"
+        android:layout_below="@+id/SNumber"
+        android:layout_alignStart="@+id/SNumber"
         android:layout_marginStart="0dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/submit_button_style"
-        android:text="@string/submit"
+        android:text="Update"
         android:textColor="#F8F5F5"
         android:textSize="14sp" />
 
@@ -53,8 +54,8 @@
         android:id="@+id/textView79"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode10"
-        android:layout_alignStart="@+id/addcode10"
+        android:layout_below="@+id/SPassword"
+        android:layout_alignStart="@+id/SPassword"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
         android:text="@string/number"
@@ -65,97 +66,71 @@
         android:id="@+id/textView78"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode11"
-        android:layout_alignStart="@+id/addcode10"
+        android:layout_below="@+id/SEmail"
+        android:layout_alignStart="@+id/SPassword"
         android:layout_marginStart="0dp"
         android:layout_marginTop="18dp"
-        android:text="@string/email"
+        android:text="Supplier Password"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/addcode12"
+        android:id="@+id/SNumber"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode10"
-        android:layout_alignStart="@+id/addcode10"
-        android:layout_alignEnd="@+id/addcode10"
+        android:layout_below="@+id/SPassword"
+        android:layout_alignStart="@+id/SPassword"
+        android:layout_alignEnd="@+id/SPassword"
         android:layout_marginStart="0dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="0dp"
         android:background="@drawable/inputs"
-        android:hint="0715405589"
+        android:hint="Phone number"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
 
     <EditText
-        android:id="@+id/addcode11"
+        android:id="@+id/SEmail"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode7"
-        android:layout_alignStart="@+id/addcode7"
-        android:layout_alignEnd="@+id/addcode7"
+        android:layout_below="@+id/SName"
+        android:layout_alignStart="@+id/SName"
+        android:layout_alignEnd="@+id/SName"
         android:layout_marginStart="0dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="0dp"
         android:background="@drawable/inputs"
-        android:hint="Suplier"
+        android:hint="Suplier Email"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>
-
-    <TextView
-        android:id="@+id/textView81"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/addcode11"
-        android:layout_alignBottom="@+id/addcode7"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="-76dp"
-        android:text="Cann't edit"
-        android:textColor="@color/light_blue"
-        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView77"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode7"
-        android:layout_alignStart="@+id/addcode10"
+        android:layout_below="@+id/SName"
+        android:layout_alignStart="@+id/SPassword"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
-        android:text="@string/name"
+        android:text="Supplier Email"
         android:textColor="@color/white"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView80"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/addcode7"
-        android:layout_alignBottom="@+id/addcode7"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="13dp"
-        android:text="Cann't edit"
-        android:textColor="@color/light_blue"
         android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView74"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/addcode7"
+        android:layout_above="@+id/SName"
         android:layout_below="@+id/textView70"
-        android:layout_alignStart="@+id/addcode7"
+        android:layout_alignStart="@+id/SName"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="109dp"
         android:layout_marginBottom="22dp"
@@ -176,19 +151,20 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/addcode10"
+        android:id="@+id/SPassword"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addcode11"
-        android:layout_alignStart="@+id/addcode11"
-        android:layout_alignEnd="@+id/addcode11"
+        android:layout_below="@+id/SEmail"
+        android:layout_alignStart="@+id/SEmail"
+        android:layout_alignEnd="@+id/SEmail"
         android:layout_marginStart="0dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="0dp"
         android:background="@drawable/inputs"
-        android:hint="Suppler@gmail.com"
+        android:hint="Supplier Password"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white">
 
     </EditText>

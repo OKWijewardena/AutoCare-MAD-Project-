@@ -32,7 +32,7 @@ public class Delete extends AppCompatActivity {
                 AddDbPass ad = new AddDbPass();
                 ad.setCode(Code);
 
-                dbHandler.deleteToDo(ad.getCode());
+                dbHandler.deleteItem(ad.getCode());
             }
         });
     }

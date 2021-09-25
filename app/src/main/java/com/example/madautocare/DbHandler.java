@@ -53,6 +53,7 @@ public class DbHandler extends SQLiteOpenHelper {
     // table Add Items
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //Items
         String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" "+
                 "("
                 +ITEMCODE+" TEXT,"
@@ -168,7 +169,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     // Delete item
-    public void deleteToDo(String code){
+    public void deleteItem(String code){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_NAME,"ItemCode =?",new String[]{String.valueOf(code)});
         db.close();
@@ -192,6 +193,28 @@ public class DbHandler extends SQLiteOpenHelper {
                     cursor.getString(3)
             );
             return addDbPass;
+        }
+        return null;
+    }
+
+    // Get supplier single data
+    public supplier_modle getSingleSupplier(String code){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE_NAME_Suppliers,new String[]{SuppliersName,SuppliersEmail,SuppliersPassword, SuppliersPhoneNumber},
+                SuppliersName + "= ?",new String[]{String.valueOf(code)}
+                ,null,null,null);
+
+        supplier_modle supplier;
+        if(cursor != null){
+            cursor.moveToFirst();
+            supplier = new supplier_modle(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3)
+            );
+            return supplier;
         }
         return null;
     }
