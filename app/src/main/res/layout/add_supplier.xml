@@ -118,7 +118,6 @@
         android:id="@+id/reg_btn"
         android:layout_width="117dp"
         android:layout_height="51dp"
-        android:backgroundTint="@color/dark_navy_blue"
         android:onClick="Register_Supplier"
         android:text="@string/add_btn"
         app:cornerRadius="100px"
