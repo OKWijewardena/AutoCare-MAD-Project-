@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ba"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/View1"
+        android:layout_width="371dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:background="#B8B6B6" />
+
+    <TextView
+        android:id="@+id/CustomerCode"
+        android:layout_width="67dp"
+        android:layout_height="22dp"
+        android:layout_alignBottom="@+id/View1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:text="Code"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/View1"
+        app:layout_constraintStart_toStartOf="@+id/View1"
+        app:layout_constraintTop_toTopOf="@+id/View1" />
+
+    <TextView
+        android:id="@+id/CustomerName"
+        android:layout_width="84dp"
+        android:layout_height="19dp"
+        android:layout_alignBottom="@+id/View1"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/CustomerCode"
+        android:text="Name"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/View1"
+        app:layout_constraintStart_toStartOf="@+id/View1"
+        app:layout_constraintTop_toTopOf="@+id/View1" />
+
+    <TextView
+        android:id="@+id/CustomerPrice"
+        android:layout_width="76dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/View1"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/CustomerName"
+        android:text="Price"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/View1"
+        app:layout_constraintStart_toStartOf="@+id/View1"
+        app:layout_constraintTop_toTopOf="@+id/View1" />
+
+    <TextView
+        android:id="@+id/CustomerQuantity"
+        android:layout_width="58dp"
+        android:layout_height="22dp"
+        android:layout_alignBottom="@+id/View1"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/CustomerPrice"
+        android:text="Quantity"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/View1"
+        app:layout_constraintStart_toStartOf="@+id/View1"
+        app:layout_constraintTop_toTopOf="@+id/View1" />
+</RelativeLayout>

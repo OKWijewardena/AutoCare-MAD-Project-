@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
-        <activity android:name=".SupplierLogin"></activity>
+        <activity android:name=".CustomerItemList"></activity>
+        <activity android:name=".SupplierLogin" />
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
