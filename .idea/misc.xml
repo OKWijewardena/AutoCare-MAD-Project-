@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/drawable/round_button.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_order_parts.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_sign_in.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/get_single.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/sales_single.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/single_supplier.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/start_activity.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/stores_page.xml" value="0.259375" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_supplier.xml" value="0.2" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/admin_category_page.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/start_activity.xml" value="0.23867753623188406" />

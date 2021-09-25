@@ -16,7 +16,6 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 2;
     private static  final String DB_NAME = "AutoCare";
 
-
     private static  final String TABLE_NAME = "AddItems";
     private static  final String TABLE_NAME2 = "OrderItems";
 
@@ -34,6 +33,17 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersEmail = "SuppliersEmail";
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
+
+    //Customer database Service details
+    private static final String TABLE_NAME_CUS = "vehicle_details";
+    private static final String ID = "Vehicle_ID";
+    private static final String TYPE = "Vehicle_Type";
+
+    private static final String KM= "Km_per_day";
+    private static final String NAME = "UserName";
+    private static final String EMAIL = "Email";
+    private static final String DATE = "Date";
+
 
 
     public DbHandler(@Nullable Context context) {
@@ -63,6 +73,20 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
 
+        //service details
+        String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
+                "("
+                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                +TYPE + " TEXT,"
+                +KM+" INTEGER,"
+                +NAME + " TEXT,"
+                +EMAIL + " TEXT,"
+                +DATE+ " TEXT"+
+                ");";
+        db.execSQL(TABLE_CREATE_Q);
+
+
+
     }
 
     @Override
@@ -75,6 +99,11 @@ public class DbHandler extends SQLiteOpenHelper {
         //Supplier
         String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME_Suppliers;
         db.execSQL(DROP_TABLE);
+        onCreate(db);
+
+        //sevice details
+        String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
+        db.execSQL(DROP_TABLE_Q);
         onCreate(db);
     }
 
@@ -98,6 +127,26 @@ public class DbHandler extends SQLiteOpenHelper {
             return false;
     }
 
+    //Check Customer name
+    public boolean CheckCustomerName(String CustomerName){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ?",new String[] {CustomerName});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //Check Customer password
+    public boolean CheckCustomerPassword(String CustomerName,String CustomerPassword){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[] {CustomerName,CustomerPassword});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
     // add details
     public void add(AddDbPass ad){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -115,6 +164,53 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
+    //service details add
+    public void add_cus(VehicleDetailsModel vehicleDetailsModel){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(TYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(KM, vehicleDetailsModel.getKm());
+        contentValues.put(NAME,vehicleDetailsModel.getUsername());
+        contentValues.put(EMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(DATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+        // close database
+        sqLiteDatabase.close();
+    }
+
+
+    // Get all todos into a list
+//    public List<Stores> getAllToDos(){
+//
+//        List<String > stores = new ArrayList();
+//        SQLiteDatabase db = getReadableDatabase();
+//        String query = "SELECT * FROM "+TABLE_NAME;
+//
+//        Cursor cursor = db.rawQuery(query,null);
+//
+//        if(cursor.moveToFirst()){
+//            do {
+//                // Create new ToDo object
+//                Stores stores1 = new Stores();
+//                // mmgby6hh
+//                stores.setId(cursor.getInt(0));
+//                stores.setTitle(cursor.getString(1));
+//                toDo.setDescription(cursor.getString(2));
+//                toDo.setStarted(cursor.getLong(3));
+//                toDo.setFinished(cursor.getLong(4));
+//
+//                //toDos [obj,objs,asas,asa]
+//                toDos.add(toDo);
+//            }while (cursor.moveToNext());
+//        }
+//        return toDos;
+//    }
+
+    
     //get details
     public List<AddDbPass> getDetails(){
         List<AddDbPass> ge = new ArrayList();
