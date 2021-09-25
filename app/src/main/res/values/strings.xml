@@ -100,5 +100,14 @@
     <string name="add_sales">Submit</string>
     <string name="add_radio_parts">Parts</string>
     <string name="add_radio_service">Service</string>
+
+<!--    Add Service Details String Variables-->
+    <string name="btn1">Full Service</string>
+    <string name="btn2">Normal Service</string>
+    <string name="fullservice">Full Service</string>
+    <string name="col1">STAGE 1: CHECK VEHICLE HISTORY, MILEAGE, SERVICE SCHEDULE REQUIREMENTS</string>
+    <string name="row1content">STAGE 2:  ROAD TEST</string>
+    <string name="row2">STAGE 3: VEHICLE ON FLOOR</string>
+    <string name="normalservice">Normal Service</string>
 </resources>
 

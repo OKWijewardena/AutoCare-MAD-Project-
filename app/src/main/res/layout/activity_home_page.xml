@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/page"
+    tools:context=".HomePage">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_book_service"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="114dp"
+        android:background="#4104A3"
+        android:text="Book a Service"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        tools:text="Book a Service" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_order"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="98dp"
+        android:background="#4104A3"
+        android:text="Order Spare Parts"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:strokeColor="@android:color/darker_gray"
+        tools:text="Order Spare Parts" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="266dp"
+        android:layout_height="73dp"
+        android:layout_below="@+id/btn_order"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="76dp"
+        android:alpha="0.5"
+        android:gravity="clip_horizontal|fill"
+        android:text="As standard we will replace the appropriate oil, oil filter, pollen filter, fuel filter and spark plugs. "
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="282dp"
+        android:layout_height="69dp"
+        android:layout_below="@+id/btn_book_service"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="70dp"
+        android:alpha="0.5"
+        android:gravity="fill"
+        android:text="As standard we will replace the appropriate oil, oil filter, pollen filter, fuel filter and spark plugs. "
+        android:textColor="@color/white" />
+
+</RelativeLayout>

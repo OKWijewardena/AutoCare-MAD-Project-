@@ -128,9 +128,10 @@ public class DbHandler extends SQLiteOpenHelper {
         onCreate(db);
 
 
-        //sevice details
+        //service details
         String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
         db.execSQL(DROP_TABLE_Q);
+        onCreate(db);
 
         //Sales
         String DROP_TABLE_SALES = "DROP TABLE IF EXISTS " + TABLE_NAME_Sales;
@@ -209,38 +210,13 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(DATE,vehicleDetailsModel.getDate());
 
         //save to table
-        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+        sqLiteDatabase.insert(TABLE_NAME_CUS,null,contentValues);
         // close database
         sqLiteDatabase.close();
     }
 
 
-    // Get all todos into a list
-//    public List<Stores> getAllToDos(){
-//
-//        List<String > stores = new ArrayList();
-//        SQLiteDatabase db = getReadableDatabase();
-//        String query = "SELECT * FROM "+TABLE_NAME;
-//
-//        Cursor cursor = db.rawQuery(query,null);
-//
-//        if(cursor.moveToFirst()){
-//            do {
-//                // Create new ToDo object
-//                Stores stores1 = new Stores();
-//                // mmgby6hh
-//                stores.setId(cursor.getInt(0));
-//                stores.setTitle(cursor.getString(1));
-//                toDo.setDescription(cursor.getString(2));
-//                toDo.setStarted(cursor.getLong(3));
-//                toDo.setFinished(cursor.getLong(4));
-//
-//                //toDos [obj,objs,asas,asa]
-//                toDos.add(toDo);
-//            }while (cursor.moveToNext());
-//        }
-//        return toDos;
-//    }
+
 
     
     //get details

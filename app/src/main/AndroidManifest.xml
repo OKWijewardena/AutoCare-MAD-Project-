@@ -55,6 +55,31 @@
         <activity
             android:name=".add_supplier"
             android:parentActivityName=".supplier_page" />
+
+
+
+
+        <activity
+            android:name=".NormalServiceContent"
+            android:exported="true" />
+        <activity
+            android:name=".HomePage"
+            android:exported="true"/>
+
+        <activity
+            android:name=".MainPage"
+            android:exported="true" />
+        <activity
+            android:name=".FullServiceContent"
+            android:exported="true" />
+
+        <activity
+            android:name=".VehicleDetails"
+            android:exported="true" />
+        <activity
+            android:name=".Signin"
+            android:exported="true" />
+
     </application>
 
 </manifest>

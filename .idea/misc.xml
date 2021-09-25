@@ -4,14 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/drawable/round_button.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_customer_item_list.xml" value="0.264" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_full_service_content.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_home_page.xml" value="0.2140625" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_main.xml" value="0.2140625" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_normal_service_content.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_order_parts.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_sign_in.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/activity_vehicle_details.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/admin_category_page.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/customer_single.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/get_single.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/mainpage.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/sales_single.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/single_supplier.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/start_activity.xml" value="0.259375" />
         <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/stores_page.xml" value="0.259375" />
+        <entry key="..\:/Users/Devmini Poornima/Documents/GitHub/AutoCare-MAD-Project-/app/src/main/res/layout/supplier_page.xml" value="0.1" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/activity_manage_sales.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/activity_sa_sdashboard.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_items_page.xml" value="0.25226449275362317" />
