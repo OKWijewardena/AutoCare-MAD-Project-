@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    private  static final  int VERSION = 2;
+    private  static final  int VERSION = 3;
     private static  final String DB_NAME = "AutoCare";
 
     private static  final String TABLE_NAME = "AddItems";
@@ -21,6 +21,9 @@ public class DbHandler extends SQLiteOpenHelper {
 
     //Supplier Database Name
     private static  final String TABLE_NAME_Suppliers= "Suppliers";
+
+    //Sales Database Name
+    private static  final String TABLE_NAME_Sales= "Sales";
 
     private static  final String ITEMCODE = "ItemCode";
     private static  final String ITEMNAME = "ItemName";
@@ -34,6 +37,7 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
+
     //Customer database Service details
     private static final String TABLE_NAME_CUS = "vehicle_details";
     private static final String ID = "Vehicle_ID";
@@ -44,6 +48,13 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String EMAIL = "Email";
     private static final String DATE = "Date";
 
+
+    //Supplier Database Table Columns
+    private static  final String CustomerName = "CustomerName";
+    private static  final String CustomerEmail = "CustomerEmail";
+    private static  final String CustomerBillType = "CustomerBillType";
+    private static  final String CustomerPhoneNumber = "CustomerPhoneNumber";
+    private static  final String CustomerBillAmount = "CustomerBillAmount";
 
 
     public DbHandler(@Nullable Context context) {
@@ -74,6 +85,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
 
+
         //service details
         String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
                 "("
@@ -87,6 +99,19 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_Q);
 
 
+
+
+        //Sales
+        String TABLE_CREATE_SALES = "CREATE TABLE "+TABLE_NAME_Sales+" "+
+                "("
+                +CustomerName+" TEXT,"
+                +CustomerEmail+" TEXT,"
+                +CustomerBillType+" TEXT,"
+                +CustomerBillAmount+" TEXT,"
+                +CustomerPhoneNumber+" TEXT"+
+                ");";
+
+        db.execSQL(TABLE_CREATE_SALES);
 
     }
 
@@ -102,9 +127,15 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE);
         onCreate(db);
 
+
         //sevice details
         String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
         db.execSQL(DROP_TABLE_Q);
+
+        //Sales
+        String DROP_TABLE_SALES = "DROP TABLE IF EXISTS " + TABLE_NAME_Sales;
+        db.execSQL(DROP_TABLE_SALES);
+
         onCreate(db);
     }
 
@@ -404,5 +435,23 @@ public class DbHandler extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(query,null);
         return cursor.getCount();
+    }
+
+    //Add the Sales
+    public void addsales(sales_modle add){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(CustomerName,add.getCustomerName());
+        contentValues.put(CustomerEmail,add.getCustomerEmail());
+        contentValues.put(CustomerBillType,add.getCustomerBillType());
+        contentValues.put(CustomerPhoneNumber,add.getCustomerPhoneNumber());
+        contentValues.put(CustomerBillAmount,add.getCustomerBillAmount());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE_NAME_Sales,null,contentValues);
+        // close database
+        sqLiteDatabase.close();
     }
 }
