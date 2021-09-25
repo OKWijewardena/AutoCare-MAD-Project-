@@ -69,6 +69,10 @@
     <string name="update_supplier">Update Supplier</string>
 
 <!--    Sales and Supplier Page String variables-->
+    <string name="Dashbord_sales_count_T">Total Sales</string>
+    <string name="Dashbord_sales_count">Rs.0</string>
+    <string name="Dashbord_supplier_count_T">Total Suppliers</string>
+    <string name="Dashbord_supplier_count">0</string>
     <string name="Dashbord_name">Sales And Supplier Dashboard</string>
     <string name="Dashbord_supplier">Manage Suppliers</string>
     <string name="Dashbord_supplier_mess">You can insert the suppliers and also you update and delete the suppliers</string>

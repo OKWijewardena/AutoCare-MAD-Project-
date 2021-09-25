@@ -256,4 +256,13 @@ public class DbHandler extends SQLiteOpenHelper {
         db.close();
         return status;
     }
+
+    // Count Suppliers
+    public int countsuppliers(){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+ TABLE_NAME_Suppliers;
+
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor.getCount();
+    }
 }
