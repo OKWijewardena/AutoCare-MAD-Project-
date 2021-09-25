@@ -70,7 +70,7 @@
 
     <!--    Sales and Supplier Page String variables-->
     <string name="Dashbord_sales_count_T">Total Sales</string>
-    <string name="Dashbord_sales_count">Rs.0</string>
+    <string name="Dashbord_sales_count">Rs.10000</string>
     <string name="Dashbord_supplier_count_T">Total Suppliers</string>
     <string name="Dashbord_supplier_count">0</string>
     <string name="Dashbord_name">Sales And Supplier Dashboard</string>
