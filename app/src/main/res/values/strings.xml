@@ -97,5 +97,6 @@
     <string name="add_sales_amount">Enter the Customer Bill Amount</string>
     <string name="add_sales_type">Enter the Customer Billing Type</string>
     <string name="add_sales_T">Add Sales</string>
+    <string name="add_sales">Submit</string>
 </resources>
 
