@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-class Signin extends AppCompatActivity {
-
+public class Login extends AppCompatActivity {
     private EditText username,password;
     private Button signin;
     private DbHandler dbHandler;
@@ -20,7 +19,7 @@ class Signin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_login);
 
         username = findViewById(R.id.edittext_usname);
         password = findViewById(R.id.edittext_pw);
@@ -35,15 +34,15 @@ class Signin extends AppCompatActivity {
                 String pass = password.getText().toString();
 
                 if (user.equals("")||pass.equals(""))
-                    Toast.makeText(Signin.this,"please enter all fields",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this,"please enter all fields",Toast.LENGTH_SHORT).show();
                 else {
                     boolean CheckCustomer = dbHandler.CheckCustomerPassword(user, pass);
                     if (CheckCustomer == true) {
-                        Toast.makeText(Signin.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(context, MainActivity.class));
 
                     }else {
-                        Toast.makeText(Signin.this,"Wrong Password or Name",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this,"Wrong Password or Name",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

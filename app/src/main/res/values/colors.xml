@@ -19,6 +19,7 @@
     <color name="Confitm">#5AE1C6</color>
     <color name="home">#090422</color>
     <color name="homeCount">#112351</color>
+    <color name="lightgray">#817E7E</color>
 
     <string name="Customer_Name">Customer Name</string>
     <string name="Customer_user_name">Customer User Name</string>
