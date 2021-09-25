@@ -114,7 +114,8 @@ public class add_supplier extends AppCompatActivity {
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Supplier_e});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare Admin Panel.");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear Supplier,\n\nYou can use this email"+" "+Supplier_e+" and use this password"+" "+ Supplier_p+" "+"login to the our supplier system.\n\n\nThank you.\n(Auto Care Admin Panel).");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear Supplier,\n\nYou can use this email"+" "+Supplier_e+" and use this " +
+                "password"+" "+ Supplier_p+" "+"login to the our supplier system.\n\n\nThank you.\n(Auto Care Admin Panel).");
         emailIntent.setType("message/rfc822");
         chooser=emailIntent.createChooser(emailIntent,"Send E-mail to Supplier");
 
