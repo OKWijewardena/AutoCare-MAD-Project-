@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
         <activity
+            android:name=".add_sales"
+            android:exported="true" />
+        <activity
             android:name=".manage_sales"
             android:exported="true" />
         <activity
