@@ -67,5 +67,14 @@
     <string name="update_supplier_password_text">Update Supplier Password</string>
     <string name="update_supplier_phone_number_text">Update Supplier Moblie Number</string>
     <string name="update_supplier">Update Supplier</string>
+
+<!--    Sales and Supplier Page String variables-->
+    <string name="Dashbord_name">Sales And Supplier Dashboard</string>
+    <string name="Dashbord_supplier">Manage Suppliers</string>
+    <string name="Dashbord_supplier_mess">You can insert the suppliers and also you update and delete the suppliers</string>
+    <string name="Dashbord_supplier_btn">Click Here</string>
+    <string name="Dashbord_sales">Manage Sales</string>
+    <string name="Dashbord_sales_mess">You can insert the Sales and also you show the all sales.</string>
+    <string name="Dashbord_sales_btn">Click Here</string>
 </resources>
 

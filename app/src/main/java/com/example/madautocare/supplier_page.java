@@ -30,7 +30,7 @@ public class supplier_page extends AppCompatActivity {
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(context,admin_category_page.class));
+                startActivity(new Intent(context,SaSDashboard.class));
             }
         });
         add_btn.setOnClickListener(new View.OnClickListener() {
