@@ -39,8 +39,6 @@ public class CustomerAdapter extends ArrayAdapter {
         ViewPrice.setText(getdata.getPrice());
         ViewQuantity.setText(getdata.getQuantity());
 
-
-
         return row;
     }
 }

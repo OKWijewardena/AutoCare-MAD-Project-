@@ -16,7 +16,6 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 3;
     private static  final String DB_NAME = "AutoCare";
 
-
     private static  final String TABLE_NAME = "AddItems";
     private static  final String TABLE_NAME2 = "OrderItems";
 
@@ -37,6 +36,18 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersEmail = "SuppliersEmail";
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
+
+
+    //Customer database Service details
+    private static final String TABLE_NAME_CUS = "vehicle_details";
+    private static final String ID = "Vehicle_ID";
+    private static final String TYPE = "Vehicle_Type";
+
+    private static final String KM= "Km_per_day";
+    private static final String NAME = "UserName";
+    private static final String EMAIL = "Email";
+    private static final String DATE = "Date";
+
 
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
@@ -109,6 +120,22 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
 
+
+        //service details
+        String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
+                "("
+                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                +TYPE + " TEXT,"
+                +KM+" INTEGER,"
+                +NAME + " TEXT,"
+                +EMAIL + " TEXT,"
+                +DATE+ " TEXT"+
+                ");";
+        db.execSQL(TABLE_CREATE_Q);
+
+
+
+
         //Sales
         String TABLE_CREATE_SALES = "CREATE TABLE "+TABLE_NAME_Sales+" "+
                 "("
@@ -120,6 +147,7 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
 
         db.execSQL(TABLE_CREATE_SALES);
+
 
 
 
@@ -156,6 +184,8 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
 
         db.execSQL(TABLE3_CREATE_QUERY8);
+
+
     }
 
     @Override
@@ -170,9 +200,16 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE);
         onCreate(db);
 
+
+        //service details
+        String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
+        db.execSQL(DROP_TABLE_Q);
+        onCreate(db);
+
         //Sales
         String DROP_TABLE_SALES = "DROP TABLE IF EXISTS " + TABLE_NAME_Sales;
         db.execSQL(DROP_TABLE_SALES);
+
         onCreate(db);
 
 
@@ -218,6 +255,26 @@ public class DbHandler extends SQLiteOpenHelper {
             return false;
     }
 
+    //Check Customer name
+    public boolean CheckCustomerName(String CustomerName){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ?",new String[] {CustomerName});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //Check Customer password
+    public boolean CheckCustomerPassword(String CustomerName,String CustomerPassword){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[] {CustomerName,CustomerPassword});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
     // add details
     public void add(AddDbPass ad){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -235,6 +292,28 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
+    //service details add
+    public void add_cus(VehicleDetailsModel vehicleDetailsModel){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(TYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(KM, vehicleDetailsModel.getKm());
+        contentValues.put(NAME,vehicleDetailsModel.getUsername());
+        contentValues.put(EMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(DATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE_NAME_CUS,null,contentValues);
+        // close database
+        sqLiteDatabase.close();
+    }
+
+
+
+
+    
     //get details
     public List<AddDbPass> getDetails(){
         List<AddDbPass> ge = new ArrayList();
