@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class SaSDashboard extends AppCompatActivity {
 
     private Button Supplier;
+    private Button Sales;
     private ImageButton Back;
     private Context context;
     private TextView Suppliercount;
@@ -30,6 +31,7 @@ public class SaSDashboard extends AppCompatActivity {
 
         Suppliercount = findViewById(R.id.suppliercount);
         Supplier=findViewById(R.id.supplier_btn);
+        Sales=findViewById(R.id.sales_btn);
         Back=findViewById(R.id.backbtn);
 
         int suppliercount = dbHandler.countsuppliers();
@@ -50,6 +52,11 @@ public class SaSDashboard extends AppCompatActivity {
             }
         });
 
-
+        Sales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,manage_sales.class));
+            }
+        });
     }
 }
