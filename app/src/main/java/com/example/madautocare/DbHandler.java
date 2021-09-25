@@ -353,4 +353,31 @@ public class DbHandler extends SQLiteOpenHelper {
         // close database
         sqLiteDatabase.close();
     }
+
+    // Get all sales into a list
+    public List<sales_modle> getallsales(){
+
+        List<sales_modle> list = new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE_NAME_Sales;
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do {
+                // Create new sm object
+                sales_modle sm = new sales_modle();
+
+
+                sm.setCustomerName(cursor.getString(0));
+                sm.setCustomerEmail(cursor.getString(1));
+                sm.setCustomerBillType(cursor.getString(2));
+                sm.setCustomerBillAmount(cursor.getString(3));
+                sm.setCustomerPhoneNumber(cursor.getString(4));
+
+                list.add(sm);
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
 }
