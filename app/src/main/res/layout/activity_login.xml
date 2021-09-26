@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/sign_in"
+    >
+
+
+    <EditText
+        android:id="@+id/edittext_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@+id/text_pw"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="48dp"
+
+        android:background="#A5A5A5"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@+id/edittext_pw"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="99dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="sans-serif"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/text_usname"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="47dp"
+        android:gravity="fill"
+        android:text="Enter Username"
+        android:textColor="@color/lightgray" />
+
+    <TextView
+        android:id="@+id/text_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="fill"
+        android:text="Enter Password"
+        android:textColor="@color/lightgray" />
+
+    <EditText
+        android:id="@+id/edittext_usname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_usname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="45dp"
+        android:background="#A5A5A5"
+        android:minHeight="48dp"
+        tools:ignore="InvalidId,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="46dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Welcome Back!"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="45dp"
+        android:gravity="center"
+        android:text="Please sign in to your account"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+:app/src/main/res/layout/activity_login.xml
+
+
+:app/src/main/res/layout/activity_sign_in.xml
+</RelativeLayout>

@@ -52,14 +52,6 @@ public class AddDbPass {
         this.quantity = quantity;
     }
 
-//    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
-
     public String Sales(){
         int price = Integer.parseInt(getPrice());
         int quantity = Integer.parseInt(getQuantity());

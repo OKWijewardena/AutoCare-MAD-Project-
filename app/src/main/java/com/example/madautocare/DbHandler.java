@@ -16,7 +16,6 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 3;
     private static  final String DB_NAME = "AutoCare";
 
-
     private static  final String TABLE_NAME = "AddItems";
     private static  final String TABLE_NAME2 = "OrderItems";
 
@@ -38,6 +37,20 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
+
+
+    //Customer database Service details
+//    private static final String TABLE_NAME_CUS = "vehicle_details";
+//    private static final String ID = "Vehicle_ID";
+//    private static final String TYPE = "Vehicle_Type";
+//
+//    private static final String KM= "Km_per_day";
+//    private static final String NAME = "UserName";
+//    private static final String EMAIL = "Email";
+//    private static final String DATE = "Date";
+
+
+
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
     private static  final String CustomerEmail = "CustomerEmail";
@@ -47,6 +60,8 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
+    //admin side customer bookings orders=========================================================
 
 
     // admin cus database table column names
@@ -80,6 +95,24 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String CDATE="Date";
 
 
+    //admin Order part
+
+    private static final String TABLE4_NAME9="customer_order";
+
+    private static final String OID ="order_Id";
+    private static final String OCUSNAME ="customer_Name";
+    private static final String OCUSEMAIL ="customer_Email";
+    private static final String OITEMID ="item_Id";
+    private static final String OITEMNAME ="item_Name";
+    private static final String OQUN="Qun";
+    private static final String ODATE="Date";
+
+
+
+    //admin side customer bookings orders=========================================================
+
+
+
 
     public DbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
@@ -109,6 +142,24 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
 
+
+
+        //service details
+//        String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
+//                "("
+//                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+//                +TYPE + " TEXT,"
+//                +KM+" INTEGER,"
+//                +NAME + " TEXT,"
+//                +EMAIL + " TEXT,"
+//                +DATE+ " TEXT"+
+//                ");";
+//        db.execSQL(TABLE_CREATE_Q);
+
+
+
+
+
         //Sales
         String TABLE_CREATE_SALES = "CREATE TABLE "+TABLE_NAME_Sales+" "+
                 "("
@@ -122,6 +173,8 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_SALES);
 
 
+
+        //admin side customer bookings orders=========================================================
 
 
         String TABLE_CREATE_QUERY6="CREATE TABLE "+TABLE_NAME6+" "+"("
@@ -156,6 +209,25 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
 
         db.execSQL(TABLE3_CREATE_QUERY8);
+
+
+
+
+        String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
+                +OID+" TEXT,"
+                +OCUSNAME+" TEXT,"
+                +OCUSEMAIL+" TEXT,"
+                +OITEMID+" TEXT,"
+                +OITEMNAME+" TEXT,"
+                +OQUN+" TEXT,"
+                +ODATE+" TEXT"+
+                ");";
+
+        db.execSQL(TABLE4_CREATE_QUERY9);
+
+        //admin side customer bookings orders=========================================================
+
+
     }
 
     @Override
@@ -170,12 +242,24 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE);
         onCreate(db);
 
+
+
+        //service details
+//        String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
+//        db.execSQL(DROP_TABLE_Q);
+//        onCreate(db);
+
+
         //Sales
         String DROP_TABLE_SALES = "DROP TABLE IF EXISTS " + TABLE_NAME_Sales;
         db.execSQL(DROP_TABLE_SALES);
         onCreate(db);
 
 
+
+
+
+        //admin side customer bookings orders=========================================================
 
 
         String DROP_TABLE_QUERY6=" DROP TABLE IF EXISTS "+TABLE_NAME6;
@@ -196,6 +280,17 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE_QUERY8);
         // create tables again
         onCreate(db);
+
+        String DROP_TABLE_QUERY9=" DROP TABLE IF EXISTS "+TABLE4_NAME9;
+        //drop older table if existed
+        db.execSQL(DROP_TABLE_QUERY9);
+        // create tables again
+        onCreate(db);
+
+
+
+        //admin side customer bookings orders=========================================================
+
     }
 
     //Check Supplier name
@@ -212,6 +307,26 @@ public class DbHandler extends SQLiteOpenHelper {
     public boolean CheckSupplierPassword(String SupplierName,String SupplierPassword){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where SuppliersName = ? and SuppliersPassword = ?",new String[] {SupplierName,SupplierPassword});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //Check Customer name
+    public boolean CheckCustomerName(String CustomerName){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ?",new String[] {CustomerName});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //Check Customer password
+    public boolean CheckCustomerPassword(String CustomerName,String CustomerPassword){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[] {CustomerName,CustomerPassword});
         if (cursor.getCount() > 0)
             return true;
         else
@@ -235,6 +350,39 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
+    //service details add
+    public void add_cus(VehicleDetailsModel vehicleDetailsModel){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+
+        contentValues.put(CTYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(CKM, vehicleDetailsModel.getKm());
+        contentValues.put(CNAME,vehicleDetailsModel.getUsername());
+        contentValues.put(CMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(CDATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE3_NAME8,null,contentValues);
+
+        contentValues.put(ATYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(AKM, vehicleDetailsModel.getKm());
+        contentValues.put(ANAME,vehicleDetailsModel.getUsername());
+        contentValues.put(AMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(ADATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE2_NAME7,null,contentValues);
+
+        // close database
+        sqLiteDatabase.close();
+    }
+
+
+
+
+    
     //get details
     public List<AddDbPass> getDetails(){
         List<AddDbPass> ge = new ArrayList();
@@ -483,6 +631,11 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
 
+
+    //admin side customer bookings orders=========================================================
+
+
+
     //add customer details
 
     public void addCustomer(AddCustomers cus){
@@ -542,10 +695,6 @@ public class DbHandler extends SQLiteOpenHelper {
         Cursor cursor= sqLiteDatabase.rawQuery(query,null);
         return cursor.getCount();
     }
-
-
-
-
 
 
     //add booking details
@@ -647,6 +796,11 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return book;
     }
+
+
+
+    //admin side customer bookings orders=========================================================
+
 
 
 }

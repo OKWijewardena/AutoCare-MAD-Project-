@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/page"
+    tools:context=".MainPage">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_full_service"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="5dp"
+        android:background="#4104A3"
+        android:text="Full Service"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:strokeColor="@android:color/darker_gray"
+        tools:text="@string/btn1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_normal_service"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="2dp"
+        android:background="#4104A3"
+        android:text="Normal Service"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:strokeColor="@android:color/darker_gray"
+        tools:text="@string/btn2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="266dp"
+        android:layout_height="73dp"
+        android:layout_below="@+id/btn_full_service"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="1dp"
+        android:alpha="0.5"
+        android:gravity="clip_horizontal|fill"
+        android:text="As standard we will replace the appropriate oil, oil filter, pollen filter, fuel filter and spark plugs. "
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_normal_service"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="184dp"
+        android:alpha="0.5"
+        android:gravity="fill"
+        android:text="As standard we will replace the appropriate oil, oil filter, pollen filter, fuel filter and spark plugs. "
+        android:textColor="@color/white" />
+
+</RelativeLayout>
