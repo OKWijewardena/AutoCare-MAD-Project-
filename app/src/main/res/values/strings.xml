@@ -126,14 +126,6 @@
     <string name="normalservice">Normal Service</string>
 
 
-    <!--    Single Sales View String variables-->
-    <string name="Sales_name">Sales Name</string>
-    <string name="Sales_email">Sales Email</string>
-    <string name="Sales_type">Sales_type</string>
-    <string name="Sales_amount">1000</string>
-
-    <!--    View All Sales String variables-->
-    <string name="View_Sales">View Sales</string>
 
 
 </resources>

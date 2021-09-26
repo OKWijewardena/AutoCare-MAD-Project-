@@ -10,14 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-:app/src/main/java/com/example/madautocare/Login.java
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
 
-public class Login extends AppCompatActivity {
 
-:app/src/main/java/com/example/madautocare/Signin.java
+
+
     private EditText username,password;
     private Button signin;
     private DbHandler dbHandler;

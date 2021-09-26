@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:background="@drawable/sign_in"
-:app/src/main/res/layout/activity_login.xml
+    >
 
-    tools:context=".Login">
-:app/src/main/res/layout/activity_sign_in.xml
 
     <EditText
         android:id="@+id/edittext_pw"
