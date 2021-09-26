@@ -31,13 +31,13 @@ public class CustomerAdapter extends ArrayAdapter {
         TextView ViewCode = row.findViewById(R.id.CustomerCode);
         TextView ViewName = row.findViewById(R.id.CustomerName);
         TextView ViewPrice = row.findViewById(R.id.CustomerPrice);
-        TextView ViewQuantity = row.findViewById(R.id.CustomerQuantity);
+//        TextView ViewQuantity = row.findViewById(R.id.CustomerQuantity);
 
         AddDbPass getdata = ge.get(position);
         ViewCode.setText(getdata.getCode());
         ViewName.setText(getdata.getNames());
         ViewPrice.setText(getdata.getPrice());
-        ViewQuantity.setText(getdata.getQuantity());
+//        ViewQuantity.setText(getdata.getQuantity());
 
         return row;
     }

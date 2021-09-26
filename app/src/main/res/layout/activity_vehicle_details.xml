@@ -20,7 +20,7 @@
         android:layout_marginEnd="59dp"
         android:alpha="0.9"
         android:gravity="center"
-        android:text="Vehicle Details"
+        android:text="Service Details"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -48,7 +48,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="46dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="235dp"
+        android:layout_marginEnd="48dp"
         android:text="Vehicle Type"
         android:textColor="@color/white"
         android:textSize="15dp" />
@@ -62,7 +62,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="46dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginEnd="48dp"
         android:text="Username"
         android:textColor="@color/white"
         android:textSize="15dp" />

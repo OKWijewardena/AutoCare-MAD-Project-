@@ -35,7 +35,7 @@
         android:layout_height="19dp"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/CustomerCode"
@@ -52,7 +52,7 @@
         android:layout_height="20dp"
         android:layout_alignBottom="@+id/View1"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="14dp"
         android:layout_toEndOf="@+id/CustomerName"
@@ -63,20 +63,4 @@
         app:layout_constraintStart_toStartOf="@+id/View1"
         app:layout_constraintTop_toTopOf="@+id/View1" />
 
-    <TextView
-        android:id="@+id/CustomerQuantity"
-        android:layout_width="58dp"
-        android:layout_height="22dp"
-        android:layout_alignBottom="@+id/View1"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="14dp"
-        android:layout_toEndOf="@+id/CustomerPrice"
-        android:text="Quantity"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/View1"
-        app:layout_constraintStart_toStartOf="@+id/View1"
-        app:layout_constraintTop_toTopOf="@+id/View1" />
 </RelativeLayout>

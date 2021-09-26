@@ -33,7 +33,6 @@ public class Add extends AppCompatActivity {
         add_name = findViewById(R.id.addname);
         add_price = findViewById(R.id.addprice);
         add_quantity = findViewById(R.id.addquantity);
-//        add_image = findViewById(R.id.addimage);
         add_submit = findViewById(R.id.addsubmit);
         context = this;
         dbHandler = new DbHandler(context);

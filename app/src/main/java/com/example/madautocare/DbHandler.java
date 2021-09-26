@@ -38,6 +38,7 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
 
+
     //Customer database Service details
 //    private static final String TABLE_NAME_CUS = "vehicle_details";
 //    private static final String ID = "Vehicle_ID";
@@ -49,14 +50,13 @@ public class DbHandler extends SQLiteOpenHelper {
 //    private static final String DATE = "Date";
 
 
+
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
     private static  final String CustomerEmail = "CustomerEmail";
     private static  final String CustomerBillType = "CustomerBillType";
     private static  final String CustomerPhoneNumber = "CustomerPhoneNumber";
     private static  final String CustomerBillAmount = "CustomerBillAmount";
-
-
 
 
 
@@ -121,6 +121,7 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE);
 
 
+
         //service details
 //        String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
 //                "("
@@ -132,6 +133,7 @@ public class DbHandler extends SQLiteOpenHelper {
 //                +DATE+ " TEXT"+
 //                ");";
 //        db.execSQL(TABLE_CREATE_Q);
+
 
 
 
@@ -185,6 +187,9 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE3_CREATE_QUERY8);
 
+
+
+
     }
 
     @Override
@@ -200,18 +205,17 @@ public class DbHandler extends SQLiteOpenHelper {
         onCreate(db);
 
 
+
         //service details
 //        String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
 //        db.execSQL(DROP_TABLE_Q);
 //        onCreate(db);
 
+
         //Sales
         String DROP_TABLE_SALES = "DROP TABLE IF EXISTS " + TABLE_NAME_Sales;
         db.execSQL(DROP_TABLE_SALES);
-
         onCreate(db);
-
-
 
 
         String DROP_TABLE_QUERY6=" DROP TABLE IF EXISTS "+TABLE_NAME6;
@@ -297,6 +301,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
 
+
         contentValues.put(CTYPE,vehicleDetailsModel.getVehicleType());
         contentValues.put(CKM, vehicleDetailsModel.getKm());
         contentValues.put(CNAME,vehicleDetailsModel.getUsername());
@@ -305,6 +310,16 @@ public class DbHandler extends SQLiteOpenHelper {
 
         //save to table
         sqLiteDatabase.insert(TABLE3_NAME8,null,contentValues);
+
+        contentValues.put(ATYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(AKM, vehicleDetailsModel.getKm());
+        contentValues.put(ANAME,vehicleDetailsModel.getUsername());
+        contentValues.put(AMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(ADATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE2_NAME7,null,contentValues);
+
         // close database
         sqLiteDatabase.close();
     }
