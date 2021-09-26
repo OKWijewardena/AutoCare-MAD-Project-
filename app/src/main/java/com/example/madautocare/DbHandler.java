@@ -525,6 +525,11 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
+    //admin side customer bookings orders=========================================================
+
+
+
     //add customer details
 
     public void addCustomer(AddCustomers cus){
@@ -584,10 +589,6 @@ public class DbHandler extends SQLiteOpenHelper {
         Cursor cursor= sqLiteDatabase.rawQuery(query,null);
         return cursor.getCount();
     }
-
-
-
-
 
 
     //add booking details
@@ -689,6 +690,11 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return book;
     }
+
+
+
+    //admin side customer bookings orders=========================================================
+
 
 
 }
