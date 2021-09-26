@@ -14,8 +14,8 @@ public class customerSideAdmin extends AppCompatActivity {
     TextView users,order;
     Button customers,orders,bookings;
 
-//    Context context;
-//    private DbHandler dbHandler;
+    Context context;
+    private DbHandler dbHandler;
 
 
     @Override
@@ -25,19 +25,32 @@ public class customerSideAdmin extends AppCompatActivity {
 
 
 
-//        context = this;
-//        dbHandler = new DbHandler(context);
+
+        context = this;
+        dbHandler = new DbHandler(context);
+
+        users=findViewById(R.id.user);
+
 
 
         customers=findViewById(R.id.view_cus);
         orders=findViewById(R.id.view_orders);
         bookings=findViewById(R.id.view_bookings);
 
+        int count=dbHandler.countCustomers();
+        String c=String.valueOf(count);
+        users.setText(c);
+
         customers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent send = new Intent( customerSideAdmin.this, Customer_Add_Page.class );
                 startActivity(send);
+
+
+
+
+
 
             }
         });

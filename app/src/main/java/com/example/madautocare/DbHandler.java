@@ -47,6 +47,11 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
+
+    //admin side customer bookings orders=========================================================
+
+
     // admin cus database table column names
     private static final String TABLE_NAME6="customer";
 
@@ -76,6 +81,24 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String CNAME ="UserName";
     private static final String CMAIL="Email";
     private static final String CDATE="Date";
+
+
+    //admin Order part
+
+    private static final String TABLE4_NAME9="customer_order";
+
+    private static final String OID ="order_Id";
+    private static final String OCUSNAME ="customer_Name";
+    private static final String OCUSEMAIL ="customer_Email";
+    private static final String OITEMID ="item_Id";
+    private static final String OITEMNAME ="item_Name";
+    private static final String OQUN="Qun";
+    private static final String ODATE="Date";
+
+
+
+    //admin side customer bookings orders=========================================================
+
 
 
 
@@ -121,6 +144,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+        //admin side customer bookings orders=========================================================
 
 
         String TABLE_CREATE_QUERY6="CREATE TABLE "+TABLE_NAME6+" "+"("
@@ -157,6 +181,24 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE3_CREATE_QUERY8);
 
 
+
+
+
+        String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
+                +OID+" TEXT,"
+                +OCUSNAME+" TEXT,"
+                +OCUSEMAIL+" TEXT,"
+                +OITEMID+" TEXT,"
+                +OITEMNAME+" TEXT,"
+                +OQUN+" TEXT,"
+                +ODATE+" TEXT"+
+                ");";
+
+        db.execSQL(TABLE4_CREATE_QUERY9);
+
+        //admin side customer bookings orders=========================================================
+
+
     }
 
     @Override
@@ -178,6 +220,12 @@ public class DbHandler extends SQLiteOpenHelper {
         onCreate(db);
 
 
+
+
+
+        //admin side customer bookings orders=========================================================
+
+
         String DROP_TABLE_QUERY6=" DROP TABLE IF EXISTS "+TABLE_NAME6;
         //drop older table if existed
         db.execSQL(DROP_TABLE_QUERY6);
@@ -196,6 +244,17 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE_QUERY8);
         // create tables again
         onCreate(db);
+
+        String DROP_TABLE_QUERY9=" DROP TABLE IF EXISTS "+TABLE4_NAME9;
+        //drop older table if existed
+        db.execSQL(DROP_TABLE_QUERY9);
+        // create tables again
+        onCreate(db);
+
+
+
+        //admin side customer bookings orders=========================================================
+
     }
 
     //Check Supplier name
@@ -519,6 +578,11 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
+    //admin side customer bookings orders=========================================================
+
+
+
     //add customer details
 
     public void addCustomer(AddCustomers cus){
@@ -578,10 +642,6 @@ public class DbHandler extends SQLiteOpenHelper {
         Cursor cursor= sqLiteDatabase.rawQuery(query,null);
         return cursor.getCount();
     }
-
-
-
-
 
 
     //add booking details
@@ -683,6 +743,11 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return book;
     }
+
+
+
+    //admin side customer bookings orders=========================================================
+
 
 
 }
