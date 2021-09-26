@@ -8,12 +8,16 @@
         <entry key="..\:/GitHub Files/Auto_Care/AutoCare-MAD-Project-/app/src/main/res/layout/activity_customer_side_admin.xml" value="0.31476449275362317" />
         <entry key="..\:/GitHub Files/Auto_Care/AutoCare-MAD-Project-/app/src/main/res/layout/activity_user_admin_home.xml" value="0.1" />
         <entry key="..\:/GitHub Files/Auto_Care/AutoCare-MAD-Project-/app/src/main/res/layout/admin_category_page.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.24027777777777778" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24027777777777778" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.24027777777777778" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/activity_manage_sales.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/activity_sa_sdashboard.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_items_page.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_sales.xml" value="0.2" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/add_supplier.xml" value="0.264" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/admin_category_page.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/delete_page.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/manage_sales.xml" value="0.2" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/sales_list.xml" value="0.264" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/sas_dashboard.xml" value="0.2" />
@@ -25,6 +29,7 @@
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/update_page.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/update_supplier.xml" value="0.4" />
         <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/layout/view_supplier.xml" value="0.2" />
+        <entry key="..\:/Users/yashm/Desktop/MAD GIT/AutoCare-MAD-Project-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24027777777777778" />
       </map>
     </option>
   </component>

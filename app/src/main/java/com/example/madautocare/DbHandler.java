@@ -474,7 +474,13 @@ public class DbHandler extends SQLiteOpenHelper {
         return list;
     }
 
+    public int countsales(){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT CustomerBillAmount FROM "+ TABLE_NAME_Sales;
 
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor.getCount();
+    }
 
 
     //add customer details
