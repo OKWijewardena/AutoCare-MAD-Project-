@@ -111,7 +111,7 @@
     <!--    View All Sales String variables-->
     <string name="View_Sales">View Sales</string>
 
-<!--    Add Service Details String Variables-->
+    <!--    Add Service Details String Variables-->
     <string name="btn1">Full Service</string>
     <string name="btn2">Normal Service</string>
     <string name="fullservice">Full Service</string>

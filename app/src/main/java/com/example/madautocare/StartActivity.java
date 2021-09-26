@@ -40,7 +40,7 @@ public class StartActivity extends AppCompatActivity {
         Customer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent customer = new Intent(StartActivity.this,HomePage.class);
+                Intent customer = new Intent(StartActivity.this,Login.class);
                 startActivity(customer);
             }
         });

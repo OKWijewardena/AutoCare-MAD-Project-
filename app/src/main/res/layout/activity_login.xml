@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sign_in"
-    android:orientation="vertical"
-    tools:context=".Signin"
-    >
-
+    tools:context=".Login">
 
     <EditText
         android:id="@+id/edittext_pw"
@@ -114,6 +111,5 @@
         android:text="Please sign in to your account"
         android:textColor="@color/white"
         android:textSize="18dp" />
-
 
 </RelativeLayout>
