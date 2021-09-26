@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
                     boolean CheckCustomer = dbHandler.CheckCustomerPassword(user, pass);
                     if (CheckCustomer == true) {
                         Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(context, MainActivity.class));
+                        startActivity(new Intent(context, HomePage.class));
 
                     }else {
                         Toast.makeText(Login.this,"Wrong Password or Name",Toast.LENGTH_SHORT).show();
