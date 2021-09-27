@@ -36,12 +36,32 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
+
+
+
+    //Customer database Service details
+//    private static final String TABLE_NAME_CUS = "vehicle_details";
+//    private static final String ID = "Vehicle_ID";
+//    private static final String TYPE = "Vehicle_Type";
+//
+//    private static final String KM= "Km_per_day";
+//    private static final String NAME = "UserName";
+//    private static final String EMAIL = "Email";
+//    private static final String DATE = "Date";
+
+
+
+
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
     private static  final String CustomerEmail = "CustomerEmail";
     private static  final String CustomerBillType = "CustomerBillType";
     private static  final String CustomerPhoneNumber = "CustomerPhoneNumber";
     private static  final String CustomerBillAmount = "CustomerBillAmount";
+
+
+
+
 
 
     //admin side customer bookings orders=========================================================
@@ -120,6 +140,24 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
 
+
+
+        //service details
+//        String TABLE_CREATE_Q = "CREATE TABLE "+TABLE_NAME_CUS+" " +
+//                "("
+//                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+//                +TYPE + " TEXT,"
+//                +KM+" INTEGER,"
+//                +NAME + " TEXT,"
+//                +EMAIL + " TEXT,"
+//                +DATE+ " TEXT"+
+//                ");";
+//        db.execSQL(TABLE_CREATE_Q);
+
+
+
+
+
         //Sales
         String TABLE_CREATE_SALES = "CREATE TABLE "+TABLE_NAME_Sales+" "+
                 "("
@@ -168,6 +206,10 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE3_CREATE_QUERY8);
 
 
+
+
+
+
         String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
                 +OID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 +OCUSNAME+" TEXT,"
@@ -196,6 +238,13 @@ public class DbHandler extends SQLiteOpenHelper {
         String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME_Suppliers;
         db.execSQL(DROP_TABLE);
         onCreate(db);
+
+
+
+        //service details
+//        String DROP_TABLE_Q = "DROP TABLE IF EXISTS "+ TABLE_NAME_CUS;
+//        db.execSQL(DROP_TABLE_Q);
+//        onCreate(db);
 
 
         //Sales
@@ -327,6 +376,16 @@ public class DbHandler extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
 
+
+        contentValues.put(CTYPE,vehicleDetailsModel.getVehicleType());
+        contentValues.put(CKM, vehicleDetailsModel.getKm());
+        contentValues.put(CNAME,vehicleDetailsModel.getUsername());
+        contentValues.put(CMAIL,vehicleDetailsModel.getEmail());
+        contentValues.put(CDATE,vehicleDetailsModel.getDate());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE3_NAME8,null,contentValues);
+
         contentValues.put(ATYPE,vehicleDetailsModel.getVehicleType());
         contentValues.put(AKM, vehicleDetailsModel.getKm());
         contentValues.put(ANAME,vehicleDetailsModel.getUsername());
@@ -335,6 +394,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         //save to table
         sqLiteDatabase.insert(TABLE2_NAME7,null,contentValues);
+
         // close database
         sqLiteDatabase.close();
     }
@@ -577,7 +637,13 @@ public class DbHandler extends SQLiteOpenHelper {
         return list;
     }
 
+    public int countsales(){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT CustomerBillAmount FROM "+ TABLE_NAME_Sales;
 
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor.getCount();
+    }
 
 
 
