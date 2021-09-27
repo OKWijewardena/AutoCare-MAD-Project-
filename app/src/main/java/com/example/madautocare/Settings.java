@@ -58,11 +58,11 @@ public class Settings extends AppCompatActivity {
                 String Password = s_password.getText().toString();
                 String Number = s_number.getText().toString();
 
-                supplier_modle update = new supplier_modle(Name,Email,Password,Number);
-                dbHandler.updateSinglesupplier(update);
+                    supplier_modle update = new supplier_modle(Name, Email, Password, Number);
+                    dbHandler.updateSinglesupplier(update);
 
-                Toast.makeText(Settings.this,"Update Successful",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(context,MainActivity.class));
+                    Toast.makeText(Settings.this, "Update Successful", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, MainActivity.class));
             }
         });
 

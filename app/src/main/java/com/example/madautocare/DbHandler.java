@@ -16,8 +16,8 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 3;
     private static  final String DB_NAME = "AutoCare";
 
+    //Supplier Store Name
     private static  final String TABLE_NAME = "AddItems";
-    private static  final String TABLE_NAME2 = "OrderItems";
 
     //Supplier Database Name
     private static  final String TABLE_NAME_Suppliers= "Suppliers";
@@ -29,13 +29,13 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String ITEMNAME = "ItemName";
     private static  final String ITEMPRICE = "ItemPrice";
     private static  final String ITEMQUANTITY = "ItemQuantity";
-//    private static  final String ITEMIMAGE = "ItemImage";
 
     //Supplier Database Table Columns
     private static  final String SuppliersName = "SuppliersName";
     private static  final String SuppliersEmail = "SuppliersEmail";
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
+
 
 
 
@@ -51,12 +51,15 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
 
+
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
     private static  final String CustomerEmail = "CustomerEmail";
     private static  final String CustomerBillType = "CustomerBillType";
     private static  final String CustomerPhoneNumber = "CustomerPhoneNumber";
     private static  final String CustomerBillAmount = "CustomerBillAmount";
+
+
 
 
 
@@ -108,11 +111,19 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String ODATE="Date";
 
 
+    //admin Order part
+
+    private static final String TABLE5_NAME10="compleate_order";
+
+    private static final String COID ="order_Id";
+    private static final String COCUSNAME ="customer_Name";
+    private static final String COCUSEMAIL ="customer_Email";
+    private static final String COITEMID ="item_Id";
+    private static final String COITEMNAME ="item_Name";
+    private static final String COQUN="Qun";
+    private static final String CODATE="Date";
 
     //admin side customer bookings orders=========================================================
-
-
-
 
     public DbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
@@ -172,10 +183,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE_SALES);
 
-
-
         //admin side customer bookings orders=========================================================
-
 
         String TABLE_CREATE_QUERY6="CREATE TABLE "+TABLE_NAME6+" "+"("
                 +NAME+" TEXT,"
@@ -211,10 +219,8 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE3_CREATE_QUERY8);
 
 
-
-
         String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
-                +OID+" TEXT,"
+                +OID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 +OCUSNAME+" TEXT,"
                 +OCUSEMAIL+" TEXT,"
                 +OITEMID+" TEXT,"
@@ -224,6 +230,19 @@ public class DbHandler extends SQLiteOpenHelper {
                 ");";
 
         db.execSQL(TABLE4_CREATE_QUERY9);
+
+
+        String TABLE5_CREATE_QUERY10="CREATE TABLE "+TABLE5_NAME10+" "+"("
+                +COID+" INTEGER,"
+                +COCUSNAME+" TEXT,"
+                +COCUSEMAIL+" TEXT,"
+                +COITEMID+" TEXT,"
+                +COITEMNAME+" TEXT,"
+                +COQUN+" TEXT,"
+                +CODATE+" TEXT"+
+                ");";
+
+        db.execSQL(TABLE5_CREATE_QUERY10);
 
         //admin side customer bookings orders=========================================================
 
@@ -287,6 +306,12 @@ public class DbHandler extends SQLiteOpenHelper {
         // create tables again
         onCreate(db);
 
+        String DROP_TABLE_QUERY10=" DROP TABLE IF EXISTS "+TABLE5_NAME10;
+        //drop older table if existed
+        db.execSQL(DROP_TABLE_QUERY10);
+        // create tables again
+        onCreate(db);
+
 
 
         //admin side customer bookings orders=========================================================
@@ -306,7 +331,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //Check Supplier password
     public boolean CheckSupplierPassword(String SupplierName,String SupplierPassword){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where SuppliersName = ? and SuppliersPassword = ?",new String[] {SupplierName,SupplierPassword});
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where SuppliersName = ? and SuppliersPassword = ?",new String[]
+                {SupplierName,SupplierPassword});
         if (cursor.getCount() > 0)
             return true;
         else
@@ -326,7 +352,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //Check Customer password
     public boolean CheckCustomerPassword(String CustomerName,String CustomerPassword){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[] {CustomerName,CustomerPassword});
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[]
+                {CustomerName,CustomerPassword});
         if (cursor.getCount() > 0)
             return true;
         else
@@ -349,6 +376,27 @@ public class DbHandler extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
     }
+
+    // Add customer order details
+    public void addOrderParts(order_parts_model od){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(OID,od.getOrder_id());
+        contentValues.put(OCUSNAME,od.getCustomer_Names());
+        contentValues.put(OCUSEMAIL,od.getCustomer_Email());
+        contentValues.put(OITEMID,od.getItem_id());
+        contentValues.put(OITEMNAME,od.getItem_Names());
+        contentValues.put(OQUN,od.getQun());
+        contentValues.put(ODATE,od.getDates());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE4_NAME9,null,contentValues);
+        //close database
+        sqLiteDatabase.close();
+
+    }
+
 
     //service details add
     public void add_cus(VehicleDetailsModel vehicleDetailsModel){
@@ -390,7 +438,6 @@ public class DbHandler extends SQLiteOpenHelper {
         String query = "SELECT * FROM "+TABLE_NAME;
 
         Cursor cursor = sqLiteDatabase.rawQuery(query,null);
-
         if(cursor.moveToFirst()){
             do{
                 AddDbPass getdata = new AddDbPass();
@@ -399,20 +446,25 @@ public class DbHandler extends SQLiteOpenHelper {
                 getdata.setNames(cursor.getString(1));
                 getdata.setPrice(cursor.getString(2));
                 getdata.setQuantity(cursor.getString(3));
-
                 ge.add(getdata);
 
             }while(cursor.moveToNext());
         }
-
-
         return ge;
     }
+
 
     // Delete item
     public void deleteItem(String code){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_NAME,"ItemCode =?",new String[]{String.valueOf(code)});
+        db.close();
+    }
+
+    //Customer order delete
+    public void deleteCustomerOrder(String code){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE4_NAME9,"customer_Email =?",new String[]{String.valueOf(code)});
         db.close();
     }
 
@@ -434,6 +486,31 @@ public class DbHandler extends SQLiteOpenHelper {
                     cursor.getString(3)
             );
             return addDbPass;
+        }
+        return null;
+    }
+
+    // Customer order get single data
+    public order_parts_model getCustomerOrderSingleData(String code){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE4_NAME9,new String[]{OID,OCUSNAME,OCUSEMAIL,OITEMID,OITEMNAME,OQUN, ODATE},
+                OCUSEMAIL + "= ?",new String[]{String.valueOf(code)}
+                ,null,null,null);
+
+        order_parts_model or;
+        if(cursor != null){
+            cursor.moveToFirst();
+            or = new order_parts_model(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6)
+            );
+            return or;
         }
         return null;
     }
@@ -471,9 +548,26 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(ITEMPRICE,addDbPass.getPrice());
         contentValues.put(ITEMQUANTITY,addDbPass.getQuantity());
 
-
         int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",
                 new String[]{String.valueOf(addDbPass.getCode())});
+
+        db.close();
+        return status;
+    }
+
+    //update customer order
+    public int updateOrdrsSingleRow(order_parts_model or){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(OCUSNAME,or.getCustomer_Names());
+        contentValues.put(OCUSEMAIL,or.getCustomer_Email());
+        contentValues.put(OQUN,or.getQun());
+        contentValues.put(ODATE,or.getDates());
+
+        int status = db.update(TABLE4_NAME9,contentValues,OCUSEMAIL +" =?",
+                new String[]{String.valueOf(or.getCustomer_Email())});
 
         db.close();
         return status;
@@ -693,7 +787,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //item delete
     public void deleteCus(String mail){
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        sqLiteDatabase.delete(TABLE_NAME6,EMAIL +" =?", new String[]{String.valueOf(mail)});
+        sqLiteDatabase.delete(TABLE_NAME6,EMAIL +" =?",
+                new String[]{String.valueOf(mail)});
         sqLiteDatabase.close();
     }
 
@@ -756,7 +851,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //booking delete
     public void deletebooking(String mail){
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        sqLiteDatabase.delete(TABLE2_NAME7,EMAIL +" =?", new String[]{String.valueOf(mail)});
+        sqLiteDatabase.delete(TABLE2_NAME7,EMAIL +" =?", new
+                String[]{String.valueOf(mail)});
         sqLiteDatabase.close();
     }
 
@@ -806,6 +902,156 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return book;
     }
+
+
+
+    //get all orders
+
+    public List<Order> getorderDetails(){
+        List<Order> orders =new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE4_NAME9;
+
+        Cursor cursor = db.rawQuery(query,null);
+        if(cursor.moveToFirst()){
+            do{
+                Order order = new Order();
+
+
+
+                order.setOid(cursor.getInt(0));
+                order.setCusname(cursor.getString(1));
+                order.setCusEmail(cursor.getString(2));
+                order.setItemId(cursor.getString(3));
+                order.setItemname(cursor.getString(4));
+                order.setQun(cursor.getString(5));
+                order.setDates(cursor.getString(6));
+
+                orders.add(order);
+            }while (cursor.moveToNext());
+        }
+        return orders;
+    }
+
+//    //add orders details
+//
+//    public void addorders(Order order){
+//        SQLiteDatabase sqLiteDatabase= getWritableDatabase();
+//        ContentValues contentValues=new ContentValues();
+//
+//        contentValues.put(OID,order.getOid());
+//        contentValues.put(OCUSNAME,order.getCusname());
+//        contentValues.put(OCUSEMAIL,order.getCusEmail());
+//        contentValues.put(OITEMID,order.getItemId());
+//        contentValues.put(OITEMNAME,order.getItemname());
+//        contentValues.put(OQUN,order.getQun());
+//        contentValues.put(ODATE,order.getDates());
+//
+//        //save to table
+//
+//        sqLiteDatabase.insert(TABLE4_NAME9,null,contentValues);
+//        //if you want you can close the database
+//        sqLiteDatabase.close();
+//
+//    }
+
+
+
+    //oreder update
+    public int updateOrder(Order order){
+        SQLiteDatabase sqLiteDatabase= getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+
+
+        contentValues.put(OCUSNAME,order.getCusname());
+        contentValues.put(OCUSEMAIL,order.getCusEmail());
+        contentValues.put(OITEMID,order.getItemId());
+        contentValues.put(OITEMNAME,order.getItemname());
+        contentValues.put(OQUN,order.getQun());
+        contentValues.put(ODATE,order.getDates());
+
+        int status=sqLiteDatabase.update(TABLE4_NAME9,contentValues,OID +" =?",new String[]{String.valueOf(order.getOid())});
+        sqLiteDatabase.close();
+
+        return status;
+    }
+
+    //order delete
+    public void deleteOrders(int id){
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+        sqLiteDatabase.delete(TABLE4_NAME9,OID +" =?", new String[]{String.valueOf(id)});
+        sqLiteDatabase.close();
+    }
+
+    public int countOrders(){
+        SQLiteDatabase sqLiteDatabase=getReadableDatabase();
+        String query= "SELECT * FROM " + TABLE4_NAME9;
+
+        Cursor cursor= sqLiteDatabase.rawQuery(query,null);
+        return cursor.getCount();
+    }
+
+    //get all Compleate orders
+
+    public List<Order> getComOrderDetails(){
+        List<Order> orders =new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE5_NAME10;
+
+        Cursor cursor = db.rawQuery(query,null);
+        if(cursor.moveToFirst()){
+            do{
+                Order order = new Order();
+
+
+
+                order.setOid(cursor.getInt(0));
+                order.setCusname(cursor.getString(1));
+                order.setCusEmail(cursor.getString(2));
+                order.setItemId(cursor.getString(3));
+                order.setItemname(cursor.getString(4));
+                order.setQun(cursor.getString(5));
+                order.setDates(cursor.getString(6));
+
+                orders.add(order);
+            }while (cursor.moveToNext());
+        }
+        return orders;
+    }
+
+    //add completeorders details
+
+    public void addCompleteOrdes(Order order){
+        SQLiteDatabase sqLiteDatabase= getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+
+        contentValues.put(COID,order.getOid());
+        contentValues.put(COCUSNAME,order.getCusname());
+        contentValues.put(COCUSEMAIL,order.getCusEmail());
+        contentValues.put(COITEMID,order.getItemId());
+        contentValues.put(COITEMNAME,order.getItemname());
+        contentValues.put(COQUN,order.getQun());
+        contentValues.put(CODATE,order.getDates());
+
+        //save to table
+
+        sqLiteDatabase.insert(TABLE5_NAME10,null,contentValues);
+        //if you want you can close the database
+        sqLiteDatabase.close();
+
+    }
+
+    public int countCOrders(){
+        SQLiteDatabase sqLiteDatabase=getReadableDatabase();
+        String query= "SELECT * FROM " + TABLE5_NAME10;
+
+        Cursor cursor= sqLiteDatabase.rawQuery(query,null);
+        return cursor.getCount();
+    }
+
+
+
+
 
 
 

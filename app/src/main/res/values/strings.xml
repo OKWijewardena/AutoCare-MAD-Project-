@@ -102,8 +102,7 @@
     <string name="add_radio_service">Service</string>
 
 
-
-<!--    Add Service Details String Variables-->
+    <!--    Add Service Details String Variables-->
 
 
     <!--    Single Sales View String variables-->
@@ -124,8 +123,6 @@
     <string name="row1content">STAGE 2:  ROAD TEST</string>
     <string name="row2">STAGE 3: VEHICLE ON FLOOR</string>
     <string name="normalservice">Normal Service</string>
-
-
 
 
 </resources>
