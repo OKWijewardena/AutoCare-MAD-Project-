@@ -12,6 +12,9 @@
         <activity android:name=".CustomerOrderView"></activity>
 
         <activity
+            android:name=".adminLogin"
+            android:exported="true" />
+        <activity
             android:name=".order_complete_view_page"
             android:exported="true" />
 

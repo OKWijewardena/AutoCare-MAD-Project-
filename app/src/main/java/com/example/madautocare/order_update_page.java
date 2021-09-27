@@ -79,18 +79,18 @@ public class order_update_page extends AppCompatActivity {
 
                Order order=new  Order(d,cname,cmail,iid,iname,iqun,idate);
 
-                int status= dbHandler.updateOrder(order);
+                dbHandler.updateOrder(order);
+                Toast.makeText(order_update_page.this,"Successfully updated",Toast.LENGTH_LONG).show();
                 Intent send = new Intent( order_update_page.this,Order_Details_Page.class );
                 startActivity(send);
 
-                if(status==1){
-                    Toast.makeText(order_update_page.this,"Successfully updated",Toast.LENGTH_LONG).show();
 
-                }
-                else{
-                    Toast.makeText(order_update_page.this,"click Again",Toast.LENGTH_LONG).show();
 
-                }
+
+
+
+
+
 
             }
         });

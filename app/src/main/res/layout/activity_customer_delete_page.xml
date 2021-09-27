@@ -98,27 +98,13 @@
         android:id="@+id/cus_delete_btn"
         android:layout_width="108dp"
         android:layout_height="45dp"
-        android:layout_marginStart="88dp"
         android:layout_marginBottom="52dp"
         android:backgroundTint="@color/Delete"
         android:text="@string/cus_Delete_button"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/cus_history_btn"
-        android:layout_width="108dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="@color/insert_btn"
-        android:text="@string/Customer_History_Button"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toEndOf="@+id/cus_delete_btn"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
 

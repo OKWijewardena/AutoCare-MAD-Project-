@@ -150,7 +150,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/Confitm"
-        android:text="Updata"
+        android:text="Update"
 
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
