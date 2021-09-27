@@ -33,7 +33,7 @@ public class adminLogin extends AppCompatActivity {
                 boolean result=vali(nam,p);
 
                 if(result==true){
-                    Intent send = new Intent( adminLogin.this,  Customer_View_Page.class );
+                    Intent send = new Intent( adminLogin.this,admin_category_page.class );
                     startActivity(send);
 
                     startActivity(send);
