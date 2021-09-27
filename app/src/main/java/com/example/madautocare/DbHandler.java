@@ -625,9 +625,19 @@ public class DbHandler extends SQLiteOpenHelper {
     public int countsales(){
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT CustomerBillAmount FROM "+ TABLE_NAME_Sales;
-
         Cursor cursor = db.rawQuery(query,null);
-        return cursor.getCount();
+
+        int sales = 0;
+        if(cursor.moveToFirst()){
+            do {
+                String row=cursor.getString(0);
+                int value=Integer.parseInt(row);
+                sales=value+sales;
+                return sales;
+            }while (cursor.moveToNext());
+        }
+        return sales;
+//        return query;
     }
 
 

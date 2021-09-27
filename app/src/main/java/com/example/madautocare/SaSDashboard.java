@@ -17,6 +17,7 @@ public class SaSDashboard extends AppCompatActivity {
     private ImageButton Back;
     private Context context;
     private TextView Suppliercount;
+    private TextView Salescount;
 
     private DbHandler dbHandler;
 
@@ -30,6 +31,7 @@ public class SaSDashboard extends AppCompatActivity {
 
 
         Suppliercount = findViewById(R.id.suppliercount);
+        Salescount = findViewById(R.id.salescount);
         Supplier=findViewById(R.id.supplier_btn);
         Sales=findViewById(R.id.sales_btn);
         Back=findViewById(R.id.backbtn);
@@ -37,6 +39,10 @@ public class SaSDashboard extends AppCompatActivity {
         int suppliercount = dbHandler.countsuppliers();
         System.out.println(suppliercount);
         Suppliercount.setText(""+suppliercount+"");
+
+        int countsales = dbHandler.countsales();
+        System.out.println(""+countsales);
+        Salescount.setText("Rs."+countsales+"");
 
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
