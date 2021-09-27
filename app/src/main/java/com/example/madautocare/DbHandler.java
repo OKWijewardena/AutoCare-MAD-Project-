@@ -425,10 +425,18 @@ public class DbHandler extends SQLiteOpenHelper {
         return ge;
     }
 
+
     // Delete item
     public void deleteItem(String code){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_NAME,"ItemCode =?",new String[]{String.valueOf(code)});
+        db.close();
+    }
+
+    //Customer order delete
+    public void deleteCustomerOrder(String code){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE4_NAME9,"customer_Email =?",new String[]{String.valueOf(code)});
         db.close();
     }
 
@@ -450,6 +458,31 @@ public class DbHandler extends SQLiteOpenHelper {
                     cursor.getString(3)
             );
             return addDbPass;
+        }
+        return null;
+    }
+
+    // Customer order get single data
+    public order_parts_model getCustomerOrderSingleData(String code){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE4_NAME9,new String[]{OID,OCUSNAME,OCUSEMAIL,OITEMID,OITEMNAME,OQUN, ODATE},
+                OCUSEMAIL + "= ?",new String[]{String.valueOf(code)}
+                ,null,null,null);
+
+        order_parts_model or;
+        if(cursor != null){
+            cursor.moveToFirst();
+            or = new order_parts_model(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6)
+            );
+            return or;
         }
         return null;
     }
@@ -489,6 +522,24 @@ public class DbHandler extends SQLiteOpenHelper {
 
         int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",
                 new String[]{String.valueOf(addDbPass.getCode())});
+
+        db.close();
+        return status;
+    }
+
+    //update customer order
+    public int updateOrdrsSingleRow(order_parts_model or){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(OCUSNAME,or.getCustomer_Names());
+        contentValues.put(OCUSEMAIL,or.getCustomer_Email());
+        contentValues.put(OQUN,or.getQun());
+        contentValues.put(ODATE,or.getDates());
+
+        int status = db.update(TABLE4_NAME9,contentValues,OCUSEMAIL +" =?",
+                new String[]{String.valueOf(or.getCustomer_Email())});
 
         db.close();
         return status;

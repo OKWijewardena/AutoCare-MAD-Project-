@@ -53,7 +53,9 @@ public class CustomerMakeOrder extends AppCompatActivity {
                 order_parts_model od = new order_parts_model(ocusname,ocusemail,oitemid,oitemname,oqun,odate);
                 dbHandler.addOrderParts(od);
                 Toast.makeText(CustomerMakeOrder.this,"Successfully Ordered",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(context,CustomerItemList.class));
+                Intent intent = new Intent(context,CustomerOrderView.class);
+                intent.putExtra("codex",od.getCustomer_Email());
+                startActivity(intent);
             }
         });
 

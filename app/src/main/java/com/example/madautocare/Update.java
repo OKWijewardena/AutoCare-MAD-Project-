@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -46,6 +47,7 @@ public class Update extends AppCompatActivity {
 
                 int state = dbHandler.updateSingleRow(data);
                 System.out.println(state);
+                Toast.makeText(Update.this,"Update Successfully",Toast.LENGTH_LONG).show();
 
                 startActivity(new Intent(context,Stores.class));
             }
