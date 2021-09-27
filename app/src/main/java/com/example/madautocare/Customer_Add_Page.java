@@ -74,7 +74,7 @@ public class Customer_Add_Page extends AppCompatActivity {
 
                     if(result==true){
 
-                         AddCustomers cus = new  AddCustomers(Cusname, CusUname, CusEmail, CusPhone,Cuspass);
+                        AddCustomers cus = new  AddCustomers(Cusname, CusUname, CusEmail, CusPhone,Cuspass);
                         dbHandler.addCustomer(cus);
                         Toast.makeText(Customer_Add_Page.this,"Successfully added",Toast.LENGTH_LONG).show();
 
