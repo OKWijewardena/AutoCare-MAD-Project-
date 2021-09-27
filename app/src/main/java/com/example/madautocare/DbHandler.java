@@ -980,6 +980,14 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
+    public int countCOrders(){
+        SQLiteDatabase sqLiteDatabase=getReadableDatabase();
+        String query= "SELECT * FROM " + TABLE5_NAME10;
+
+        Cursor cursor= sqLiteDatabase.rawQuery(query,null);
+        return cursor.getCount();
+    }
+
 
 
 

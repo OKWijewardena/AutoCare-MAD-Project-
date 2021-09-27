@@ -34,7 +34,7 @@ public class Customer_Delete_Page extends AppCompatActivity {
         contact=findViewById(R.id.cus_dcon);
 
         dbtn=findViewById(R.id.cus_delete_btn);
-        hbtn=findViewById(R.id.cus_history_btn);
+
         builder=new AlertDialog.Builder(this);
 
         Intent i = getIntent();

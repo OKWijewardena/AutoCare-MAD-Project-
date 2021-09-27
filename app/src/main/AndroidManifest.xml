@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
         <activity
+            android:name=".adminLogin"
+            android:exported="true" />
+        <activity
             android:name=".order_complete_view_page"
             android:exported="true" />
         <activity android:name=".CustomerMakeOrder" />
