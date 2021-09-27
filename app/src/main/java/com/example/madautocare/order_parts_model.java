@@ -13,6 +13,13 @@ public class order_parts_model {
         Dates = date;
     }
 
+    public order_parts_model(String customer_Names, String customer_Email, String qun, String dates) {
+        Customer_Names = customer_Names;
+        Customer_Email = customer_Email;
+        Qun = qun;
+        Dates = dates;
+    }
+
     public order_parts_model(String customer_Names, String customer_Email, String item_id, String item_Names, String qun, String dates) {
         Customer_Names = customer_Names;
         Customer_Email = customer_Email;
