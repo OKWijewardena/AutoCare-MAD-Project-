@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".order_page">
-
+    tools:context=".order_update_page">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="213dp"
         android:layout_height="147dp"
         android:background="@drawable/orderr"
-        app:layout_constraintBottom_toTopOf="@+id/oid"
+        app:layout_constraintBottom_toTopOf="@+id/uoid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.746" />
 
     <EditText
-        android:id="@+id/oid"
+        android:id="@+id/uoid"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="20dp"
@@ -30,14 +29,14 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/cusname"
+        app:layout_constraintBottom_toTopOf="@+id/ucusname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/cusname"
+        android:id="@+id/ucusname"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="20dp"
@@ -48,14 +47,14 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/cusEmail"
+        app:layout_constraintBottom_toTopOf="@+id/ucusEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/cusEmail"
+        android:id="@+id/ucusEmail"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="20dp"
@@ -66,14 +65,14 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/itemId"
+        app:layout_constraintBottom_toTopOf="@+id/uitemId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/itemId"
+        android:id="@+id/uitemId"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="20dp"
@@ -85,14 +84,14 @@
 
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintBottom_toTopOf="@+id/udate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/itemname"
+        android:id="@+id/uitemname"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="20dp"
@@ -103,14 +102,14 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/qun"
+        app:layout_constraintBottom_toTopOf="@+id/uqun"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/qun"
+        android:id="@+id/uqun"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginBottom="72dp"
@@ -129,7 +128,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/date"
+        android:id="@+id/udate"
         android:layout_width="236dp"
         android:layout_height="39dp"
         android:layout_marginEnd="88dp"
@@ -141,33 +140,33 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#919191"
-        app:layout_constraintBottom_toTopOf="@+id/itemname"
+        app:layout_constraintBottom_toTopOf="@+id/uitemname"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/orderdelete_btn"
+        android:id="@+id/uorderdelete_btn"
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/Delete"
+        android:backgroundTint="@color/Confitm"
         android:text="Updata"
 
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/confirm_btn"
+        app:layout_constraintEnd_toStartOf="@+id/uconfirm_btn"
         app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/confirm_btn"
+        android:id="@+id/uconfirm_btn"
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/Confitm"
-        android:text="Complete"
+        android:backgroundTint="@color/Delete"
+        android:text="Delete"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

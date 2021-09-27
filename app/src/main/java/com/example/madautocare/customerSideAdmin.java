@@ -46,19 +46,13 @@ public class customerSideAdmin extends AppCompatActivity {
             public void onClick(View view) {
                 Intent send = new Intent( customerSideAdmin.this, Customer_Add_Page.class );
                 startActivity(send);
-
-
-
-
-
-
             }
         });
 
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent send = new Intent( customerSideAdmin.this, Order_Details_Page.class );
+                Intent send = new Intent( customerSideAdmin.this, order_home.class );
                 startActivity(send);
 
             }

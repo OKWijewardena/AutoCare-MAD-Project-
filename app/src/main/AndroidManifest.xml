@@ -98,9 +98,6 @@
             android:name=".BookingComplete_View_Page"
             android:exported="true" />
         <activity
-            android:name=".Order_Details_Page"
-            android:exported="true" />
-        <activity
             android:name=".Booking_View_Page"
             android:exported="true" />
         <activity
@@ -115,6 +112,20 @@
 
         <activity
             android:name=".Customer_View_Page"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".order_home"
+            android:exported="true" />
+        <activity
+            android:name=".order_update_page"
+            android:exported="true" />
+        <activity
+            android:name=".order_page"
+            android:exported="true" />
+        <activity
+            android:name=".Order_Details_Page"
             android:exported="true" />
 
 

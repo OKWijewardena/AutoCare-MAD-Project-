@@ -214,7 +214,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
         String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
-                +OID+" TEXT,"
+                +OID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 +OCUSNAME+" TEXT,"
                 +OCUSEMAIL+" TEXT,"
                 +OITEMID+" TEXT,"
@@ -796,6 +796,83 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return book;
     }
+
+
+
+    //get all orders
+
+    public List<Order> getorderDetails(){
+        List<Order> orders =new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE4_NAME9;
+
+        Cursor cursor = db.rawQuery(query,null);
+        if(cursor.moveToFirst()){
+            do{
+                Order order = new Order();
+                int i=Integer.parseInt(cursor.getString(0));
+
+                order.setOid(i);
+                order.setCusname(cursor.getString(1));
+                order.setCusEmail(cursor.getString(2));
+                order.setItemId(cursor.getString(3));
+                order.setItemname(cursor.getString(4));
+                order.setQun(cursor.getString(5));
+                order.setDates(cursor.getString(6));
+
+                orders.add(order);
+            }while (cursor.moveToNext());
+        }
+        return orders;
+    }
+
+    //add orders details
+
+    public void addorders(Order order){
+        SQLiteDatabase sqLiteDatabase= getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+
+        contentValues.put(OID,order.getOid());
+        contentValues.put(OCUSNAME,order.getCusname());
+        contentValues.put(OCUSEMAIL,order.getCusEmail());
+        contentValues.put(OITEMID,order.getItemId());
+        contentValues.put(OITEMNAME,order.getItemname());
+        contentValues.put(OQUN,order.getQun());
+        contentValues.put(ODATE,order.getDates());
+
+        //save to table
+
+        sqLiteDatabase.insert(TABLE4_NAME9,null,contentValues);
+        //if you want you can close the database
+        sqLiteDatabase.close();
+
+    }
+    //oreder update
+    public int updateOrder(Order order){
+        SQLiteDatabase sqLiteDatabase= getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+
+
+        contentValues.put(OCUSNAME,order.getCusname());
+        contentValues.put(OCUSEMAIL,order.getCusEmail());
+        contentValues.put(OITEMID,order.getItemId());
+        contentValues.put(OITEMNAME,order.getItemname());
+        contentValues.put(OQUN,order.getQun());
+        contentValues.put(ODATE,order.getDates());
+
+        int status=sqLiteDatabase.update(TABLE4_NAME9,contentValues,OID +" =?",new String[]{String.valueOf(order.getOid())});
+        sqLiteDatabase.close();
+
+        return status;
+    }
+
+    //order delete
+    public void deleteOrders(String id){
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+        sqLiteDatabase.delete(TABLE4_NAME9,OID +" =?", new String[]{String.valueOf(id)});
+        sqLiteDatabase.close();
+    }
+
 
 
 
