@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class adminLogin extends AppCompatActivity {
     Button admin;
     EditText name,pass;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class adminLogin extends AppCompatActivity {
         admin=findViewById(R.id.aLogin);
         name=findViewById(R.id.admin_name);
         pass=findViewById(R.id.admin_password);
+        back=findViewById(R.id.loginBack);
 
         String nam=name.getText().toString();
         String p=pass.getText().toString();
@@ -30,7 +33,7 @@ public class adminLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                boolean result=vali(nam,p);
+                boolean result=true;
 
                 if(result==true){
                     Intent send = new Intent( adminLogin.this,admin_category_page.class );
@@ -40,21 +43,13 @@ public class adminLogin extends AppCompatActivity {
                 }
             }
         });
-    }
-    public boolean vali(String a,String b){
-        if(a.length()!=2){
-           name.requestFocus();
-           name.setError("Enter the valid phone number");
-            return false;
-        }
-        else if(b.length()!=2){
-            pass.requestFocus();
-            pass.setError("check the password");
-            return false;
-        }
-        else{
-            return true;
-        }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent send = new Intent( adminLogin.this,StartActivity.class );
+                startActivity(send);
+            }
+        });
     }
 }

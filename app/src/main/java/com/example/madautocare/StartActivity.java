@@ -30,7 +30,7 @@ public class StartActivity extends AppCompatActivity {
         Admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent admin = new Intent(StartActivity.this,admin_category_page.class);
+                Intent admin = new Intent(StartActivity.this,adminLogin.class);
                 startActivity(admin);
             }
         });

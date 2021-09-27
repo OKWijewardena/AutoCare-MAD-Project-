@@ -39,7 +39,7 @@ public class admin_category_page extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(admin_category_page.this,customerSideAdmin.class);
+                Intent i = new Intent(admin_category_page.this,adminLogin.class);
                 startActivity(i);
             }
         });
