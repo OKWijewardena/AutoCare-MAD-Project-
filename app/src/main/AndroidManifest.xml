@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
+        <activity android:name=".CustomerOrderView"></activity>
+
         <activity
             android:name=".adminLogin"
             android:exported="true" />
         <activity
             android:name=".order_complete_view_page"
             android:exported="true" />
+
         <activity android:name=".CustomerMakeOrder" />
         <activity
             android:name=".customerSideAdmin"
@@ -104,6 +107,7 @@
         <activity
             android:name=".Customer_View_Page"
             android:exported="true" />
+
         <activity
             android:name=".order_home"
             android:exported="true" />
@@ -116,6 +120,7 @@
         <activity
             android:name=".Order_Details_Page"
             android:exported="true" />
+
     </application>
 
 </manifest>
