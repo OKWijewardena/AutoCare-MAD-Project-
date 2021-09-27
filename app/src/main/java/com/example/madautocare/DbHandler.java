@@ -16,8 +16,8 @@ public class DbHandler extends SQLiteOpenHelper {
     private  static final  int VERSION = 3;
     private static  final String DB_NAME = "AutoCare";
 
+    //Supplier Store Name
     private static  final String TABLE_NAME = "AddItems";
-    private static  final String TABLE_NAME2 = "OrderItems";
 
     //Supplier Database Name
     private static  final String TABLE_NAME_Suppliers= "Suppliers";
@@ -29,7 +29,6 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String ITEMNAME = "ItemName";
     private static  final String ITEMPRICE = "ItemPrice";
     private static  final String ITEMQUANTITY = "ItemQuantity";
-//    private static  final String ITEMIMAGE = "ItemImage";
 
     //Supplier Database Table Columns
     private static  final String SuppliersName = "SuppliersName";
@@ -37,16 +36,12 @@ public class DbHandler extends SQLiteOpenHelper {
     private static  final String SuppliersPassword = "SuppliersPassword";
     private static  final String SuppliersPhoneNumber = "SuppliersPhoneNumber";
 
-
     //Supplier Database Table Columns
     private static  final String CustomerName = "CustomerName";
     private static  final String CustomerEmail = "CustomerEmail";
     private static  final String CustomerBillType = "CustomerBillType";
     private static  final String CustomerPhoneNumber = "CustomerPhoneNumber";
     private static  final String CustomerBillAmount = "CustomerBillAmount";
-
-
-
 
 
     //admin side customer bookings orders=========================================================
@@ -95,12 +90,7 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String OQUN="Qun";
     private static final String ODATE="Date";
 
-
-
     //admin side customer bookings orders=========================================================
-
-
-
 
     public DbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
@@ -142,10 +132,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE_SALES);
 
-
-
         //admin side customer bookings orders=========================================================
-
 
         String TABLE_CREATE_QUERY6="CREATE TABLE "+TABLE_NAME6+" "+"("
                 +NAME+" TEXT,"
@@ -181,11 +168,8 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE3_CREATE_QUERY8);
 
 
-
-
-
         String TABLE4_CREATE_QUERY9="CREATE TABLE "+TABLE4_NAME9+" "+"("
-                +OID+" TEXT,"
+                +OID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 +OCUSNAME+" TEXT,"
                 +OCUSEMAIL+" TEXT,"
                 +OITEMID+" TEXT,"
@@ -270,7 +254,9 @@ public class DbHandler extends SQLiteOpenHelper {
     //Check Supplier password
     public boolean CheckSupplierPassword(String SupplierName,String SupplierPassword){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where SuppliersName = ? and SuppliersPassword = ?",new String[] {SupplierName,SupplierPassword});
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Suppliers where" +
+                " SuppliersName = ? and SuppliersPassword = ?",new String[]
+                {SupplierName,SupplierPassword});
         if (cursor.getCount() > 0)
             return true;
         else
@@ -290,7 +276,9 @@ public class DbHandler extends SQLiteOpenHelper {
     //Check Customer password
     public boolean CheckCustomerPassword(String CustomerName,String CustomerPassword){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer where username = ? and password = ?",new String[] {CustomerName,CustomerPassword});
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from customer " +
+                "where username = ? and password = ?",new String[]
+                {CustomerName,CustomerPassword});
         if (cursor.getCount() > 0)
             return true;
         else
@@ -313,6 +301,27 @@ public class DbHandler extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
     }
+
+    // Add customer order details
+    public void addOrderParts(order_parts_model od){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(OID,od.getOrder_id());
+        contentValues.put(OCUSNAME,od.getCustomer_Names());
+        contentValues.put(OCUSEMAIL,od.getCustomer_Email());
+        contentValues.put(OITEMID,od.getItem_id());
+        contentValues.put(OITEMNAME,od.getItem_Names());
+        contentValues.put(OQUN,od.getQun());
+        contentValues.put(ODATE,od.getDates());
+
+        //save to table
+        sqLiteDatabase.insert(TABLE4_NAME9,null,contentValues);
+        //close database
+        sqLiteDatabase.close();
+
+    }
+
 
     //service details add
     public void add_cus(VehicleDetailsModel vehicleDetailsModel){
@@ -343,7 +352,6 @@ public class DbHandler extends SQLiteOpenHelper {
         String query = "SELECT * FROM "+TABLE_NAME;
 
         Cursor cursor = sqLiteDatabase.rawQuery(query,null);
-
         if(cursor.moveToFirst()){
             do{
                 AddDbPass getdata = new AddDbPass();
@@ -352,13 +360,10 @@ public class DbHandler extends SQLiteOpenHelper {
                 getdata.setNames(cursor.getString(1));
                 getdata.setPrice(cursor.getString(2));
                 getdata.setQuantity(cursor.getString(3));
-
                 ge.add(getdata);
 
             }while(cursor.moveToNext());
         }
-
-
         return ge;
     }
 
@@ -423,7 +428,6 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(ITEMNAME,addDbPass.getNames());
         contentValues.put(ITEMPRICE,addDbPass.getPrice());
         contentValues.put(ITEMQUANTITY,addDbPass.getQuantity());
-
 
         int status = db.update(TABLE_NAME,contentValues,ITEMCODE +" =?",
                 new String[]{String.valueOf(addDbPass.getCode())});
@@ -630,7 +634,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //item delete
     public void deleteCus(String mail){
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        sqLiteDatabase.delete(TABLE_NAME6,EMAIL +" =?", new String[]{String.valueOf(mail)});
+        sqLiteDatabase.delete(TABLE_NAME6,EMAIL +" =?",
+                new String[]{String.valueOf(mail)});
         sqLiteDatabase.close();
     }
 
@@ -693,7 +698,8 @@ public class DbHandler extends SQLiteOpenHelper {
     //booking delete
     public void deletebooking(String mail){
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        sqLiteDatabase.delete(TABLE2_NAME7,EMAIL +" =?", new String[]{String.valueOf(mail)});
+        sqLiteDatabase.delete(TABLE2_NAME7,EMAIL +" =?", new
+                String[]{String.valueOf(mail)});
         sqLiteDatabase.close();
     }
 
