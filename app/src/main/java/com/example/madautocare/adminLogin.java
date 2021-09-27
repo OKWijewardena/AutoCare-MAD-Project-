@@ -47,7 +47,7 @@ public class adminLogin extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent send = new Intent( adminLogin.this,adminLogin.class );
+                Intent send = new Intent( adminLogin.this,StartActivity.class );
                 startActivity(send);
             }
         });
