@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class customerSideAdmin extends AppCompatActivity {
 
-    TextView users,order;
+    TextView users,orderc;
     Button customers,orders,bookings;
 
     Context context;
@@ -30,6 +30,7 @@ public class customerSideAdmin extends AppCompatActivity {
         dbHandler = new DbHandler(context);
 
         users=findViewById(R.id.user);
+        orderc=findViewById(R.id.orderss);
 
 
 
@@ -37,9 +38,15 @@ public class customerSideAdmin extends AppCompatActivity {
         orders=findViewById(R.id.view_orders);
         bookings=findViewById(R.id.view_bookings);
 
-        int count=dbHandler.countCustomers();
+       int count=dbHandler.countCustomers();
         String c=String.valueOf(count);
         users.setText(c);
+
+        int or=dbHandler.countOrders();
+        String orr=String.valueOf(or);
+        orderc.setText(orr);
+
+
 
         customers.setOnClickListener(new View.OnClickListener() {
             @Override

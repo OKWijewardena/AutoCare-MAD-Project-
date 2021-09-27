@@ -1,5 +1,6 @@
 package com.example.madautocare;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +13,18 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class orderAdapter extends ArrayAdapter< Order> {
+
+public class orderCompleteAdapter extends ArrayAdapter<Order> {
     private Context context;
     private int resource;
     List< Order> order;
 
-    orderAdapter(Context context, int resource, List< Order> order){
+    orderCompleteAdapter(Context context, int resource, List< Order> order){
         super(context,resource,order);
         this.context=context;
         this.resource=resource;
         this.order=order;
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -41,9 +42,9 @@ public class orderAdapter extends ArrayAdapter< Order> {
         TextView ddate=row.findViewById(R.id.date);
 
 
-         Order orders= order.get(position);
+        Order orders= order.get(position);
 
-       String cc=String.valueOf(orders.getOid());
+        String cc=String.valueOf(orders.getOid());
         iid.setText(cc);
         nnamw.setText(orders.getCusname());
         eemail.setText(orders.getCusEmail());
@@ -54,7 +55,5 @@ public class orderAdapter extends ArrayAdapter< Order> {
 
         return row;
     }
-
-
 
 }

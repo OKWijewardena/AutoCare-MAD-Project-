@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +50,9 @@ public class order_page extends AppCompatActivity {
         String iname=i.getStringExtra("iname");
         String iqun=i.getStringExtra("qun");
         String datee=i.getStringExtra("date");
+        int d=Integer.parseInt(id);
+
+        int cid=Integer.parseInt(id);
 
         oid.setText(id);
         cusname.setText(cname);
@@ -62,7 +66,7 @@ public class order_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent send = new Intent( order_page.this, order_update_page.class );
+                Intent send = new Intent( order_page.this,order_update_page.class );
                 send.putExtra("id",id);
                 send.putExtra("name",cname);
                 send.putExtra("mail",cmail);
@@ -70,33 +74,10 @@ public class order_page extends AppCompatActivity {
                 send.putExtra("iname",iname);
                 send.putExtra("qun",iqun);
                 send.putExtra("date",datee);
+
                 startActivity(send);
 
-
-
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        update.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) { String a="a";
+//                int a=1;
 //               String b="a";
 //               String c="a";
 //               String d="a";
@@ -105,9 +86,28 @@ public class order_page extends AppCompatActivity {
 //               String g="a";
 //               Order order = new Order(a,b,c,d,e,f,g);
 //               dbHandler.addorders(order);
-//            }
-//        });
+//
 
+
+
+            }
+        });
+
+        conplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Order order = new Order(cid,cname,cmail,iiid,iname,iqun,datee);
+                dbHandler.addCompleteOrdes(order);
+
+                dbHandler.deleteOrders(d);
+                Toast.makeText(order_page.this,"Completed",Toast.LENGTH_LONG).show();
+                Intent send = new Intent( order_page.this,order_home.class );
+                startActivity(send);
+
+
+            }
+        });
 
     }
 }

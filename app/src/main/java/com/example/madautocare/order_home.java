@@ -29,6 +29,8 @@ public class order_home extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent send = new Intent( order_home.this, order_complete_view_page.class );
+                startActivity(send);
 
             }
         });

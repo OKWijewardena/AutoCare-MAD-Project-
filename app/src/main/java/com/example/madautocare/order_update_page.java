@@ -49,6 +49,9 @@ public class order_update_page extends AppCompatActivity {
         String iqun=i.getStringExtra("qun");
         String datee=i.getStringExtra("date");
 
+
+        int d=Integer.parseInt(id);
+
         oid.setText(id);
         cusname.setText(cname);
         cusmail.setText(cmail);
@@ -57,8 +60,9 @@ public class order_update_page extends AppCompatActivity {
         qun.setText(iqun);
         date.setText( datee);
 
-        String idd=oid.getText().toString();
-        int d=Integer.parseInt(idd);
+
+
+
 
 
 
@@ -73,10 +77,10 @@ public class order_update_page extends AppCompatActivity {
                 String iqun=qun.getText().toString();
                 String idate=date.getText().toString();
 
-                 Order order=new  Order(d,cname,cmail,iid,iname,iqun,idate);
+               Order order=new  Order(d,cname,cmail,iid,iname,iqun,idate);
 
                 int status= dbHandler.updateOrder(order);
-                Intent send = new Intent( order_update_page.this, customerSideAdmin.class );
+                Intent send = new Intent( order_update_page.this,Order_Details_Page.class );
                 startActivity(send);
 
                 if(status==1){
@@ -84,19 +88,17 @@ public class order_update_page extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(order_update_page.this,"error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(order_update_page.this,"click Again",Toast.LENGTH_LONG).show();
 
                 }
-
-
 
             }
         });
 
         odel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                dbHandler.deleteOrders(idd);
+               public void onClick(View view) {
+                dbHandler.deleteOrders(d);
                 Toast.makeText(order_update_page.this,"Successfully deleted",Toast.LENGTH_LONG).show();
                 Intent send = new Intent( order_update_page.this,customerSideAdmin.class );
                 startActivity(send);

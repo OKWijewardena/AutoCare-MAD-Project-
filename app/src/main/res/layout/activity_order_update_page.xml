@@ -115,7 +115,7 @@
         android:layout_marginBottom="72dp"
         android:background="@drawable/customer_input"
         android:ems="10"
-        android:hint="@string/Meter_Reading"
+
         android:inputType="textPersonName"
         android:textAlignment="center"
 

@@ -48,8 +48,10 @@ public class Order_Details_Page extends AppCompatActivity {
                   String qun=order.getQun();
                   String date=order.getDates();
 
+                String coid=String.valueOf(oid);
+
                 Intent send = new Intent( Order_Details_Page.this,  order_page.class );
-                send.putExtra("id",oid);
+                send.putExtra("id",coid);
                 send.putExtra("name",cusname);
                 send.putExtra("mail",cusEmail);
                 send.putExtra("iid",itemId);
