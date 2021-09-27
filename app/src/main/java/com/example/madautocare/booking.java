@@ -24,8 +24,6 @@ public class booking {
 
     }
 
-
-
     public String getVehicle_ID() {
         return Vehicle_ID;
     }
