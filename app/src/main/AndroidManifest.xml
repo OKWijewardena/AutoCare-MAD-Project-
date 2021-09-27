@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAutoCare">
-
-        <activity android:name=".CustomerMakeOrder"></activity>
-
-
+        <activity
+            android:name=".order_complete_view_page"
+            android:exported="true" />
+        <activity android:name=".CustomerMakeOrder" />
         <activity
             android:name=".customerSideAdmin"
             android:exported="true" />
@@ -35,9 +35,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
-
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Add" />
@@ -64,44 +62,29 @@
         <activity
             android:name=".add_supplier"
             android:parentActivityName=".supplier_page" />
-
-
-
-
-
-
-
         <activity
             android:name=".NormalServiceContent"
             android:exported="true" />
         <activity
             android:name=".HomePage"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".MainPage"
             android:exported="true" />
         <activity
             android:name=".FullServiceContent"
             android:exported="true" />
-
         <activity
             android:name=".VehicleDetails"
             android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="true" />
-
-
-
         <activity
             android:name=".Bookings_main"
             android:exported="true" />
         <activity
             android:name=".BookingComplete_View_Page"
-            android:exported="true" />
-        <activity
-            android:name=".Order_Details_Page"
             android:exported="true" />
         <activity
             android:name=".Booking_View_Page"
@@ -115,12 +98,21 @@
         <activity
             android:name=".Customer_Add_Page"
             android:exported="true" />
-
         <activity
             android:name=".Customer_View_Page"
             android:exported="true" />
-
-
+        <activity
+            android:name=".order_home"
+            android:exported="true" />
+        <activity
+            android:name=".order_update_page"
+            android:exported="true" />
+        <activity
+            android:name=".order_page"
+            android:exported="true" />
+        <activity
+            android:name=".Order_Details_Page"
+            android:exported="true" />
     </application>
 
 </manifest>
