@@ -111,6 +111,8 @@ public class order_update_page extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent send = new Intent( order_update_page.this,order_page.class );
+                startActivity(send);
 
             }
         });

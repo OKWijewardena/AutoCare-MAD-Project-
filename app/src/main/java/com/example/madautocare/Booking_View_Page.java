@@ -123,6 +123,9 @@ public class Booking_View_Page extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent send = new Intent( Booking_View_Page.this, Bookings_main.class );
+                startActivity(send);
+
 
             }
         });

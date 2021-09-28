@@ -93,6 +93,8 @@ public class Customer_Add_Page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent send = new Intent( Customer_Add_Page.this,  customerSideAdmin.class );
+                startActivity(send);
             }
         });
 

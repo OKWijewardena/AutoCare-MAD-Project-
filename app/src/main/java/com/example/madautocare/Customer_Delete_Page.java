@@ -86,6 +86,8 @@ public class Customer_Delete_Page extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent send = new Intent( Customer_Delete_Page.this,  Customer_Add_Page.class );
+                startActivity(send);
 
             }
         });

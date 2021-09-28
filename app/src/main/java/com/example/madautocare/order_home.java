@@ -42,6 +42,8 @@ public class order_home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent send = new Intent( order_home.this, customerSideAdmin.class );
+                startActivity(send);
             }
         });
 

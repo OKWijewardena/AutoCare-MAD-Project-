@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ public class order_page extends AppCompatActivity {
 
     EditText oid,cusname,cusmail,itemid,itemname,qun,date;
     Button update,conplete;
+    ImageButton back;
 
 
     private DbHandler dbHandler;
@@ -41,6 +43,7 @@ public class order_page extends AppCompatActivity {
         itemname=findViewById(R.id.itemname);
         qun=findViewById(R.id.qun);
         date=findViewById(R.id.date);
+        back=findViewById(R.id.bbbb);
 
         Intent i = getIntent();
         String id=i.getStringExtra("id");
@@ -106,6 +109,13 @@ public class order_page extends AppCompatActivity {
                 startActivity(send);
 
 
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent send = new Intent( order_page.this,order_home.class );
+                startActivity(send);
             }
         });
 

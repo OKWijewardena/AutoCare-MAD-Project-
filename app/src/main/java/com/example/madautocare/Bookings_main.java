@@ -46,6 +46,8 @@ public class Bookings_main extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent send = new Intent( Bookings_main.this, customerSideAdmin.class );
+                startActivity(send);
 
             }
         });
