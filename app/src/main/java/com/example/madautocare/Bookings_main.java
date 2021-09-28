@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Bookings_main extends AppCompatActivity {
 
     Button btn1,btn2;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,18 @@ public class Bookings_main extends AppCompatActivity {
 
             }
         });
+
+        back=findViewById(R.id.bbbb);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent send = new Intent( Bookings_main.this, customerSideAdmin.class );
+                startActivity(send);
+
+            }
+        });
+
 
 
     }

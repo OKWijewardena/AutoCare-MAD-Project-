@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ public class order_update_page extends AppCompatActivity {
 
     EditText oid,cusname,cusmail,itemid,itemname,qun,date;
     Button aupdate,odel;
+    ImageButton back;
 
     private DbHandler dbHandler;
     private Context context;
@@ -30,6 +32,7 @@ public class order_update_page extends AppCompatActivity {
 
         aupdate=findViewById(R.id.uorderdelete_btn);
         odel=findViewById(R.id.uconfirm_btn);
+        back=findViewById(R.id.bbbb);
 
 
         oid=findViewById(R.id.uoid);
@@ -102,6 +105,15 @@ public class order_update_page extends AppCompatActivity {
                 Toast.makeText(order_update_page.this,"Successfully deleted",Toast.LENGTH_LONG).show();
                 Intent send = new Intent( order_update_page.this,customerSideAdmin.class );
                 startActivity(send);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent send = new Intent( order_update_page.this,order_page.class );
+                startActivity(send);
+
             }
         });
 

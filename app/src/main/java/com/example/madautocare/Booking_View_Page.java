@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -17,6 +18,7 @@ public class Booking_View_Page extends AppCompatActivity {
     Button btn,confirm;
 
     EditText id,type,km,uname,mail,date;
+    ImageButton back;
 
     private DbHandler dbHandler;
     private Context context;
@@ -31,6 +33,7 @@ public class Booking_View_Page extends AppCompatActivity {
 
         btn=findViewById(R.id.booking_delete_btn);
         confirm=findViewById(R.id.booking_confirm_btn);
+        back=findViewById(R.id.bbbb);
 
 
         context=this;
@@ -113,6 +116,16 @@ public class Booking_View_Page extends AppCompatActivity {
 
                 Intent send = new Intent( Booking_View_Page.this, Booking_Details_Page.class );
                 startActivity(send);
+
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent send = new Intent( Booking_View_Page.this, Bookings_main.class );
+                startActivity(send);
+
 
             }
         });
