@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class Customer_Delete_Page extends AppCompatActivity {
 
     EditText name,uname,eemail,contact;
     Button dbtn,hbtn;
+    ImageButton back;
     AlertDialog.Builder builder;
 
     Context context;
@@ -76,6 +78,14 @@ public class Customer_Delete_Page extends AppCompatActivity {
 //                dbHandler.deleteCus(email);
 //                Intent send = new Intent( Customer_Delete_Page.this, Customer_View_Page.class );
 //                startActivity(send);
+
+            }
+        });
+
+        back=findViewById(R.id.bbbb);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
             }
         });

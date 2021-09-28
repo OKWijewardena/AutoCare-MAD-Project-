@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Customer_Add_Page extends AppCompatActivity {
 
     private EditText name,Uname,email,pno,password,rePassword;
+    ImageButton back;
 
     private Button add ,close,show ;
 
@@ -37,6 +39,7 @@ public class Customer_Add_Page extends AppCompatActivity {
         password=findViewById(R.id.cus_repass);
         rePassword=findViewById(R.id.cus_passw);
         show=findViewById(R.id.cus_show);
+        back=findViewById(R.id.bbbb);
 
         add=findViewById(R.id.cus_add_btn);
         close=findViewById(R.id.close);
@@ -66,7 +69,7 @@ public class Customer_Add_Page extends AppCompatActivity {
                 //emailIntent.setType("text/plain");
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{CusEmail});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Wellcome to the AutoCare vehicle service center.");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Use this password"+" "+ CusRepass+" "+"login to the system and change the password once use login.Thank you");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Use this password:-"+" "+ CusRepass+" "+" & username:-"+" "+ CusUname+" "+"login to the system and change the password once use login.Thank you");
                 emailIntent.setType("message/rfc822");
                 chooser=emailIntent.createChooser(emailIntent,"send email test app");
 
@@ -86,6 +89,13 @@ public class Customer_Add_Page extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +103,8 @@ public class Customer_Add_Page extends AppCompatActivity {
                 startActivity(send);
             }
         });
+
+
 
     }
 
