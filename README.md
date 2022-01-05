@@ -16,10 +16,10 @@ AutoCare vehicle service and spareparts ordering app.
 ## Contributors names and IT numbers
   
 
-* O.K Wijewardena - IT20070458 <a href="https://github.com/OKWijewardena">OKWijewardena</a>
-* M.D.T. Saparamadu - IT20022488 <a href="https://github.com/thiva99">thiva99</a>
-* M.D.Y.A. Saparamadu - IT20030230 <a href="https://github.com/YashmikaAnusara">YashmikaAnusara</a>
-* M.G.N.D. Poornima - IT20071202 <a href="https://github.com/DevminiNsh">DevminiNsh</a>
+* Group Leader - O.K Wijewardena - IT20070458 <a href="https://github.com/OKWijewardena">OKWijewardena</a>
+* Member 2 - M.D.T. Saparamadu - IT20022488 <a href="https://github.com/thiva99">thiva99</a>
+* Member 3 - M.D.Y.A. Saparamadu - IT20030230 <a href="https://github.com/YashmikaAnusara">YashmikaAnusara</a>
+* Member 4 - M.G.N.D. Poornima - IT20071202 <a href="https://github.com/DevminiNsh">DevminiNsh</a>
 
 ## Technologies
 
